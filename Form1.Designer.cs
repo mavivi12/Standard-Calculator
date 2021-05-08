@@ -53,7 +53,7 @@ namespace Standard_Calculator
             this.MPlusBtn = new System.Windows.Forms.Button();
             this.MMinusBtn = new System.Windows.Forms.Button();
             this.MRBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textOutput1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button0
@@ -356,18 +356,18 @@ namespace Standard_Calculator
             this.MRBtn.Text = "mr";
             this.MRBtn.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // textOutput1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(4, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 60);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textOutput1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textOutput1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textOutput1.Location = new System.Drawing.Point(4, 13);
+            this.textOutput1.Margin = new System.Windows.Forms.Padding(4);
+            this.textOutput1.Multiline = true;
+            this.textOutput1.Name = "textOutput1";
+            this.textOutput1.Size = new System.Drawing.Size(336, 60);
+            this.textOutput1.TabIndex = 28;
+            this.textOutput1.Text = "0";
+            this.textOutput1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -376,7 +376,7 @@ namespace Standard_Calculator
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(344, 386);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textOutput1);
             this.Controls.Add(this.MRBtn);
             this.Controls.Add(this.MMinusBtn);
             this.Controls.Add(this.MPlusBtn);
@@ -438,7 +438,7 @@ namespace Standard_Calculator
         private System.Windows.Forms.Button MPlusBtn;
         private System.Windows.Forms.Button MMinusBtn;
         private System.Windows.Forms.Button MRBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textOutput1;
     }
 }
 
