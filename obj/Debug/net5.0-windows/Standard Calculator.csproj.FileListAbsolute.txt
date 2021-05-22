@@ -6,7 +6,6 @@ C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\bin\Debug\n
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\bin\Debug\net5.0-windows\ref\Standard Calculator.dll
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\bin\Debug\net5.0-windows\Standard Calculator.pdb
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard Calculator.csprojAssemblyReference.cache
-C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard_Calculator.Form1.resources
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard Calculator.csproj.GenerateResource.cache
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard Calculator.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard Calculator.AssemblyInfoInputs.cache
@@ -16,3 +15,4 @@ C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\n
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\ref\Standard Calculator.dll
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard Calculator.pdb
 C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard Calculator.genruntimeconfig.cache
+C:\Users\Marvic\Source\Repos\Standard Calculator\Standard Calculator\obj\Debug\net5.0-windows\Standard_Calculator.StdCalculator.resources
