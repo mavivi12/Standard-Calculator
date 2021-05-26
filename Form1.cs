@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Standard_Calculator
 {
-    public partial class StdCalculator : Form
+    public partial class StdCalculator : System.Windows.Forms.Form
     {
         public StdCalculator()
         {
@@ -22,69 +22,74 @@ namespace Standard_Calculator
 
         }
 
-        private void TextOutput1(object sender, EventArgs e)
+        private void TextOutput(object sender, EventArgs e)
         {
 
         }
 
         private void Number0_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello World");
+            int number0 = 0;
+            textOutput.Text = number0.ToString();
         }
 
         private void Number1_Click(object sender, EventArgs e)
         {
-
+            int number1 = 1;
+            textOutput.Text = number1.ToString();
         }
 
         private void Number2_Click(object sender, EventArgs e)
         {
-
+            int number2 = 2;
+            textOutput.Text = number2.ToString();
         }
 
         private void Number3_Click(object sender, EventArgs e)
         {
+            int number3 = 3;
+            textOutput.Text = number3.ToString();
 
         }
 
         private void Number4_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Number5_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Number6_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Number7_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Number8_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Number9_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void PointBtn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void PlusMinusBtn_Click(object sender, EventArgs e)
@@ -94,7 +99,7 @@ namespace Standard_Calculator
 
         private void AdditionBtn_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void SubtractionBtn_Click(object sender, EventArgs e)
@@ -114,12 +119,12 @@ namespace Standard_Calculator
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-
+            textOutput.Text = "";
         }
 
         private void BackspaceBtn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void MemoryClearBtn_Click(object sender, EventArgs e)
