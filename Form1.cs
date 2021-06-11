@@ -29,70 +29,62 @@ namespace Standard_Calculator
 
         private void Number0_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "0";
-            //if (textOutput.Text == "")
-            //    textOutput.Text = "0";
-            //else
-            //    textOutput.Text += "0";
+            Number_Input.Text += "0";
         }
 
         private void Number1_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "1";
-            //if (textOutput.Text == "0")
-            //    textOutput.Text = "1";
-            //else
-            //    textOutput.Text += "1";
+            Number_Input.Text += "1";
         }
 
         private void Number2_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "2";
+            Number_Input.Text += "2";
         }
 
         private void Number3_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "3";
+            Number_Input.Text += "3";
         }
 
         private void Number4_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "4";
+            Number_Input.Text += "4";
         }
 
         private void Number5_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "6";
+            Number_Input.Text += "6";
         }
 
         private void Number6_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "6";
+            Number_Input.Text += "6";
         }
 
         private void Number7_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "7";
+            Number_Input.Text += "7";
         }
 
         private void Number8_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "8";
+            Number_Input.Text += "8";
         }
 
         private void Number9_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "9";
+            Number_Input.Text += "9";
         }
 
         private void PointBtn_Click(object sender, EventArgs e)
         {
-            textOutput.Text += ".";
+            Number_Input.Text += ".";
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            textOutput.Text += "=";
+            Number_Input.Text += "=";
         }
 
         private void PlusMinusBtn_Click(object sender, EventArgs e)
@@ -122,7 +114,7 @@ namespace Standard_Calculator
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            textOutput.Text = "";
+            Number_Input.Text = "";
         }
 
         private void BackspaceBtn_Click(object sender, EventArgs e)
