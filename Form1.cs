@@ -12,6 +12,7 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
+
         public StdCalculator()
         {
             InitializeComponent();
@@ -22,104 +23,109 @@ namespace Standard_Calculator
 
         }
 
-        private void TextOutput(object sender, EventArgs e)
+        private void TextResult_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Number0_Click(object sender, EventArgs e)
+        private void Btn0_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "0";
+            txtResult.Text += "0";
         }
 
-        private void Number1_Click(object sender, EventArgs e)
+        private void Btn1_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "1";
+            txtResult.Text += "1";
         }
 
-        private void Number2_Click(object sender, EventArgs e)
+        private void Btn2_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "2";
+            txtResult.Text += "2";
         }
 
-        private void Number3_Click(object sender, EventArgs e)
+        private void Btn3_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "3";
+            txtResult.Text += "3";
         }
 
-        private void Number4_Click(object sender, EventArgs e)
+        private void Btn4_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "4";
+            txtResult.Text += "4";
         }
 
-        private void Number5_Click(object sender, EventArgs e)
+        private void Btn5_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "6";
+            txtResult.Text += "6";
         }
 
-        private void Number6_Click(object sender, EventArgs e)
+        private void Btn6_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "6";
+            txtResult.Text += "6";
         }
 
-        private void Number7_Click(object sender, EventArgs e)
+        private void Btn7_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "7";
+            txtResult.Text += "7";
         }
 
-        private void Number8_Click(object sender, EventArgs e)
+        private void Btn8_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "8";
+            txtResult.Text += "8";
         }
 
-        private void Number9_Click(object sender, EventArgs e)
+        private void Btn9_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "9";
+            txtResult.Text += "9";
         }
 
         private void PointBtn_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += ".";
+            txtResult.Text += ".";
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            Number_Input.Text += "=";
+            txtResult.Text += "=";
         }
 
         private void PlusMinusBtn_Click(object sender, EventArgs e)
         {
-
+            double v = double.Parse(txtResult.Text);
+            v = -v;
+            txtResult.Text = v.ToString();
         }
 
         private void AdditionBtn_Click(object sender, EventArgs e)
         {
-           
+            txtResult.Text += "+";
         }
 
         private void SubtractionBtn_Click(object sender, EventArgs e)
         {
-
+            txtResult.Text += "−";
         }
 
         private void MultiplicationBtn_Click(object sender, EventArgs e)
         {
-
+            txtResult.Text += "×";
         }
 
         private void DivisionBtn_Click(object sender, EventArgs e)
         {
-
+            txtResult.Text += "/";
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            Number_Input.Text = "";
+            txtResult.Text = "";
         }
 
-        private void BackspaceBtn_Click(object sender, EventArgs e)
+        private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            
+            if (txtResult.Text.Length > 0)
+            {
+                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1, 1);
+            }
         }
 
         private void MemoryClearBtn_Click(object sender, EventArgs e)

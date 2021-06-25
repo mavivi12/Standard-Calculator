@@ -30,17 +30,17 @@ namespace Standard_Calculator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StdCalculator));
-            this.Number_Input = new System.Windows.Forms.TextBox();
-            this.number0 = new System.Windows.Forms.Button();
-            this.number1 = new System.Windows.Forms.Button();
-            this.number2 = new System.Windows.Forms.Button();
-            this.number3 = new System.Windows.Forms.Button();
-            this.number4 = new System.Windows.Forms.Button();
-            this.number5 = new System.Windows.Forms.Button();
-            this.number6 = new System.Windows.Forms.Button();
-            this.number7 = new System.Windows.Forms.Button();
-            this.number8 = new System.Windows.Forms.Button();
-            this.number9 = new System.Windows.Forms.Button();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.btn0 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
             this.PointBtn = new System.Windows.Forms.Button();
             this.EqualBtn = new System.Windows.Forms.Button();
             this.PlusMinusBtn = new System.Windows.Forms.Button();
@@ -49,168 +49,169 @@ namespace Standard_Calculator
             this.MultiplicationBtn = new System.Windows.Forms.Button();
             this.DivisionBtn = new System.Windows.Forms.Button();
             this.ClearBtn = new System.Windows.Forms.Button();
-            this.BackspaceBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.displayOutputLbl = new System.Windows.Forms.Label();
             this.MemoryClearBtn = new System.Windows.Forms.Button();
             this.MemoryPlusBtn = new System.Windows.Forms.Button();
             this.MemoryMinusBtn = new System.Windows.Forms.Button();
             this.MemoryRecallBtn = new System.Windows.Forms.Button();
-            this.displayOutputLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Number_Input
+            // txtResult
             // 
-            this.Number_Input.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Number_Input.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Number_Input.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Number_Input.Location = new System.Drawing.Point(4, 41);
-            this.Number_Input.Margin = new System.Windows.Forms.Padding(4);
-            this.Number_Input.Name = "Number_Input";
-            this.Number_Input.PlaceholderText = "0";
-            this.Number_Input.Size = new System.Drawing.Size(336, 52);
-            this.Number_Input.TabIndex = 28;
-            this.Number_Input.TabStop = false;
-            this.Number_Input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Number_Input.TextChanged += new System.EventHandler(this.TextOutput);
+            this.txtResult.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtResult.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtResult.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtResult.Location = new System.Drawing.Point(4, 41);
+            this.txtResult.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.PlaceholderText = "0";
+            this.txtResult.ReadOnly = true;
+            this.txtResult.Size = new System.Drawing.Size(336, 51);
+            this.txtResult.TabIndex = 28;
+            this.txtResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtResult.TextChanged += new System.EventHandler(this.TextResult_TextChanged);
             // 
-            // number0
+            // btn0
             // 
-            this.number0.BackColor = System.Drawing.Color.Gainsboro;
-            this.number0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number0.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number0.Location = new System.Drawing.Point(4, 348);
-            this.number0.Margin = new System.Windows.Forms.Padding(4);
-            this.number0.Name = "number0";
-            this.number0.Size = new System.Drawing.Size(168, 52);
-            this.number0.TabIndex = 21;
-            this.number0.Text = "0";
-            this.number0.UseVisualStyleBackColor = false;
-            this.number0.Click += new System.EventHandler(this.Number0_Click);
+            this.btn0.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn0.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn0.Location = new System.Drawing.Point(4, 348);
+            this.btn0.Margin = new System.Windows.Forms.Padding(4);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(168, 52);
+            this.btn0.TabIndex = 21;
+            this.btn0.Text = "0";
+            this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.Btn0_Click);
             // 
-            // number1
+            // btn1
             // 
-            this.number1.BackColor = System.Drawing.Color.Gainsboro;
-            this.number1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number1.Location = new System.Drawing.Point(4, 296);
-            this.number1.Margin = new System.Windows.Forms.Padding(4);
-            this.number1.Name = "number1";
-            this.number1.Size = new System.Drawing.Size(84, 52);
-            this.number1.TabIndex = 17;
-            this.number1.Text = "1";
-            this.number1.UseVisualStyleBackColor = false;
-            this.number1.Click += new System.EventHandler(this.Number1_Click);
+            this.btn1.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn1.Location = new System.Drawing.Point(4, 296);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(84, 52);
+            this.btn1.TabIndex = 17;
+            this.btn1.Text = "1";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
             // 
-            // number2
+            // btn2
             // 
-            this.number2.BackColor = System.Drawing.Color.Gainsboro;
-            this.number2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number2.Location = new System.Drawing.Point(88, 296);
-            this.number2.Margin = new System.Windows.Forms.Padding(4);
-            this.number2.Name = "number2";
-            this.number2.Size = new System.Drawing.Size(84, 52);
-            this.number2.TabIndex = 18;
-            this.number2.Text = "2";
-            this.number2.UseVisualStyleBackColor = false;
-            this.number2.Click += new System.EventHandler(this.Number2_Click);
+            this.btn2.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn2.Location = new System.Drawing.Point(88, 296);
+            this.btn2.Margin = new System.Windows.Forms.Padding(4);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(84, 52);
+            this.btn2.TabIndex = 18;
+            this.btn2.Text = "2";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.Btn2_Click);
             // 
-            // number3
+            // btn3
             // 
-            this.number3.BackColor = System.Drawing.Color.Gainsboro;
-            this.number3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number3.Location = new System.Drawing.Point(172, 296);
-            this.number3.Margin = new System.Windows.Forms.Padding(4);
-            this.number3.Name = "number3";
-            this.number3.Size = new System.Drawing.Size(84, 52);
-            this.number3.TabIndex = 19;
-            this.number3.Text = "3";
-            this.number3.UseVisualStyleBackColor = false;
-            this.number3.Click += new System.EventHandler(this.Number3_Click);
+            this.btn3.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn3.Location = new System.Drawing.Point(172, 296);
+            this.btn3.Margin = new System.Windows.Forms.Padding(4);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(84, 52);
+            this.btn3.TabIndex = 19;
+            this.btn3.Text = "3";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.Btn3_Click);
             // 
-            // number4
+            // btn4
             // 
-            this.number4.BackColor = System.Drawing.Color.Gainsboro;
-            this.number4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number4.Location = new System.Drawing.Point(4, 244);
-            this.number4.Margin = new System.Windows.Forms.Padding(4);
-            this.number4.Name = "number4";
-            this.number4.Size = new System.Drawing.Size(84, 52);
-            this.number4.TabIndex = 13;
-            this.number4.Text = "4";
-            this.number4.UseVisualStyleBackColor = false;
-            this.number4.Click += new System.EventHandler(this.Number4_Click);
+            this.btn4.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn4.Location = new System.Drawing.Point(4, 244);
+            this.btn4.Margin = new System.Windows.Forms.Padding(4);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(84, 52);
+            this.btn4.TabIndex = 13;
+            this.btn4.Text = "4";
+            this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.Btn4_Click);
             // 
-            // number5
+            // btn5
             // 
-            this.number5.BackColor = System.Drawing.Color.Gainsboro;
-            this.number5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number5.Location = new System.Drawing.Point(88, 244);
-            this.number5.Margin = new System.Windows.Forms.Padding(4);
-            this.number5.Name = "number5";
-            this.number5.Size = new System.Drawing.Size(84, 52);
-            this.number5.TabIndex = 14;
-            this.number5.Text = "5";
-            this.number5.UseVisualStyleBackColor = false;
-            this.number5.Click += new System.EventHandler(this.Number5_Click);
+            this.btn5.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn5.Location = new System.Drawing.Point(88, 244);
+            this.btn5.Margin = new System.Windows.Forms.Padding(4);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(84, 52);
+            this.btn5.TabIndex = 14;
+            this.btn5.Text = "5";
+            this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.Btn5_Click);
             // 
-            // number6
+            // btn6
             // 
-            this.number6.BackColor = System.Drawing.Color.Gainsboro;
-            this.number6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number6.Location = new System.Drawing.Point(172, 244);
-            this.number6.Margin = new System.Windows.Forms.Padding(4);
-            this.number6.Name = "number6";
-            this.number6.Size = new System.Drawing.Size(84, 52);
-            this.number6.TabIndex = 15;
-            this.number6.Text = "6";
-            this.number6.UseVisualStyleBackColor = false;
-            this.number6.Click += new System.EventHandler(this.Number6_Click);
+            this.btn6.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn6.Location = new System.Drawing.Point(172, 244);
+            this.btn6.Margin = new System.Windows.Forms.Padding(4);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(84, 52);
+            this.btn6.TabIndex = 15;
+            this.btn6.Text = "6";
+            this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.Btn6_Click);
             // 
-            // number7
+            // btn7
             // 
-            this.number7.BackColor = System.Drawing.Color.Gainsboro;
-            this.number7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number7.Location = new System.Drawing.Point(4, 192);
-            this.number7.Margin = new System.Windows.Forms.Padding(4);
-            this.number7.Name = "number7";
-            this.number7.Size = new System.Drawing.Size(84, 52);
-            this.number7.TabIndex = 9;
-            this.number7.Text = "7";
-            this.number7.UseVisualStyleBackColor = false;
-            this.number7.Click += new System.EventHandler(this.Number7_Click);
+            this.btn7.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn7.Location = new System.Drawing.Point(4, 192);
+            this.btn7.Margin = new System.Windows.Forms.Padding(4);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(84, 52);
+            this.btn7.TabIndex = 9;
+            this.btn7.Text = "7";
+            this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.Btn7_Click);
             // 
-            // number8
+            // btn8
             // 
-            this.number8.BackColor = System.Drawing.Color.Gainsboro;
-            this.number8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number8.Location = new System.Drawing.Point(88, 192);
-            this.number8.Margin = new System.Windows.Forms.Padding(4);
-            this.number8.Name = "number8";
-            this.number8.Size = new System.Drawing.Size(84, 52);
-            this.number8.TabIndex = 10;
-            this.number8.Text = "8";
-            this.number8.UseVisualStyleBackColor = false;
-            this.number8.Click += new System.EventHandler(this.Number8_Click);
+            this.btn8.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn8.Location = new System.Drawing.Point(88, 192);
+            this.btn8.Margin = new System.Windows.Forms.Padding(4);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(84, 52);
+            this.btn8.TabIndex = 10;
+            this.btn8.Text = "8";
+            this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.Btn8_Click);
             // 
-            // number9
+            // btn9
             // 
-            this.number9.BackColor = System.Drawing.Color.Gainsboro;
-            this.number9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.number9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.number9.Location = new System.Drawing.Point(172, 192);
-            this.number9.Margin = new System.Windows.Forms.Padding(4);
-            this.number9.Name = "number9";
-            this.number9.Size = new System.Drawing.Size(84, 52);
-            this.number9.TabIndex = 11;
-            this.number9.Text = "9";
-            this.number9.UseVisualStyleBackColor = false;
-            this.number9.Click += new System.EventHandler(this.Number9_Click);
+            this.btn9.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn9.Location = new System.Drawing.Point(172, 192);
+            this.btn9.Margin = new System.Windows.Forms.Padding(4);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(84, 52);
+            this.btn9.TabIndex = 11;
+            this.btn9.Text = "9";
+            this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.Btn9_Click);
             // 
             // PointBtn
             // 
@@ -277,7 +278,7 @@ namespace Standard_Calculator
             this.SubtractionBtn.Name = "SubtractionBtn";
             this.SubtractionBtn.Size = new System.Drawing.Size(84, 52);
             this.SubtractionBtn.TabIndex = 16;
-            this.SubtractionBtn.Text = "-";
+            this.SubtractionBtn.Text = "−";
             this.SubtractionBtn.UseVisualStyleBackColor = false;
             this.SubtractionBtn.Click += new System.EventHandler(this.SubtractionBtn_Click);
             // 
@@ -323,19 +324,30 @@ namespace Standard_Calculator
             this.ClearBtn.UseVisualStyleBackColor = false;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
-            // BackspaceBtn
+            // DeleteBtn
             // 
-            this.BackspaceBtn.BackColor = System.Drawing.Color.DarkGray;
-            this.BackspaceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackspaceBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BackspaceBtn.Location = new System.Drawing.Point(88, 140);
-            this.BackspaceBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.BackspaceBtn.Name = "BackspaceBtn";
-            this.BackspaceBtn.Size = new System.Drawing.Size(84, 52);
-            this.BackspaceBtn.TabIndex = 6;
-            this.BackspaceBtn.Text = "←";
-            this.BackspaceBtn.UseVisualStyleBackColor = false;
-            this.BackspaceBtn.Click += new System.EventHandler(this.BackspaceBtn_Click);
+            this.DeleteBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DeleteBtn.Location = new System.Drawing.Point(88, 140);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(84, 52);
+            this.DeleteBtn.TabIndex = 6;
+            this.DeleteBtn.Text = "←";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // displayOutputLbl
+            // 
+            this.displayOutputLbl.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.displayOutputLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.displayOutputLbl.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.displayOutputLbl.Location = new System.Drawing.Point(5, 7);
+            this.displayOutputLbl.Name = "displayOutputLbl";
+            this.displayOutputLbl.Size = new System.Drawing.Size(336, 38);
+            this.displayOutputLbl.TabIndex = 31;
+            this.displayOutputLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MemoryClearBtn
             // 
@@ -393,17 +405,6 @@ namespace Standard_Calculator
             this.MemoryRecallBtn.UseVisualStyleBackColor = false;
             this.MemoryRecallBtn.Click += new System.EventHandler(this.MemoryRecallBtn_Click);
             // 
-            // displayOutputLbl
-            // 
-            this.displayOutputLbl.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.displayOutputLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.displayOutputLbl.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.displayOutputLbl.Location = new System.Drawing.Point(4, 6);
-            this.displayOutputLbl.Name = "displayOutputLbl";
-            this.displayOutputLbl.Size = new System.Drawing.Size(336, 38);
-            this.displayOutputLbl.TabIndex = 31;
-            this.displayOutputLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // StdCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -412,30 +413,30 @@ namespace Standard_Calculator
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(344, 406);
             this.Controls.Add(this.displayOutputLbl);
-            this.Controls.Add(this.number0);
-            this.Controls.Add(this.number1);
-            this.Controls.Add(this.Number_Input);
+            this.Controls.Add(this.btn0);
+            this.Controls.Add(this.btn1);
+            this.Controls.Add(this.txtResult);
             this.Controls.Add(this.MemoryRecallBtn);
             this.Controls.Add(this.MemoryMinusBtn);
             this.Controls.Add(this.MemoryPlusBtn);
             this.Controls.Add(this.MemoryClearBtn);
             this.Controls.Add(this.PlusMinusBtn);
-            this.Controls.Add(this.number9);
+            this.Controls.Add(this.btn9);
             this.Controls.Add(this.DivisionBtn);
             this.Controls.Add(this.MultiplicationBtn);
-            this.Controls.Add(this.BackspaceBtn);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.ClearBtn);
-            this.Controls.Add(this.number8);
-            this.Controls.Add(this.number7);
-            this.Controls.Add(this.number6);
-            this.Controls.Add(this.number5);
+            this.Controls.Add(this.btn8);
+            this.Controls.Add(this.btn7);
+            this.Controls.Add(this.btn6);
+            this.Controls.Add(this.btn5);
             this.Controls.Add(this.SubtractionBtn);
             this.Controls.Add(this.AdditionBtn);
-            this.Controls.Add(this.number4);
-            this.Controls.Add(this.number3);
+            this.Controls.Add(this.btn4);
+            this.Controls.Add(this.btn3);
             this.Controls.Add(this.EqualBtn);
             this.Controls.Add(this.PointBtn);
-            this.Controls.Add(this.number2);
+            this.Controls.Add(this.btn2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(256, 174);
@@ -450,17 +451,17 @@ namespace Standard_Calculator
         }
 
         #endregion
-        private System.Windows.Forms.TextBox Number_Input;
-        private System.Windows.Forms.Button number0;
-        private System.Windows.Forms.Button number1;
-        private System.Windows.Forms.Button number2;
-        private System.Windows.Forms.Button number3;
-        private System.Windows.Forms.Button number4;
-        private System.Windows.Forms.Button number5;
-        private System.Windows.Forms.Button number6;
-        private System.Windows.Forms.Button number7;
-        private System.Windows.Forms.Button number8;
-        private System.Windows.Forms.Button number9;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Button btn0;
+        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btn6;
+        private System.Windows.Forms.Button btn7;
+        private System.Windows.Forms.Button btn8;
+        private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button PointBtn;
         private System.Windows.Forms.Button EqualBtn;
         private System.Windows.Forms.Button PlusMinusBtn;
@@ -469,12 +470,12 @@ namespace Standard_Calculator
         private System.Windows.Forms.Button MultiplicationBtn;
         private System.Windows.Forms.Button DivisionBtn;
         private System.Windows.Forms.Button ClearBtn;
-        private System.Windows.Forms.Button BackspaceBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Label displayOutputLbl;
         private System.Windows.Forms.Button MemoryClearBtn;
         private System.Windows.Forms.Button MemoryPlusBtn;
         private System.Windows.Forms.Button MemoryMinusBtn;
         private System.Windows.Forms.Button MemoryRecallBtn;
-        private System.Windows.Forms.Label displayOutputLbl;
     }
 }
 
