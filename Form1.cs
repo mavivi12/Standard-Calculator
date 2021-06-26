@@ -12,10 +12,14 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
+        private double memory = 0;
 
         public StdCalculator()
         {
             InitializeComponent();
+
+            MemoryRecallBtn.Enabled = false;
+            MemoryClearBtn.Enabled = false;
         }
 
         private void Btn0_Click(object sender, EventArgs e)
@@ -23,7 +27,9 @@ namespace Standard_Calculator
             txtResult.Text += "0";
 
             if (txtResult.Text == "0")
+            {
                 txtResult.Clear();
+            }
         }
 
         private void Btn1_Click(object sender, EventArgs e)
@@ -124,22 +130,31 @@ namespace Standard_Calculator
 
         private void MemoryClearBtn_Click(object sender, EventArgs e)
         {
-
+            memory = 0;
+            MemoryRecallBtn.Enabled = false;
+            MemoryClearBtn.Enabled = false;
         }
 
         private void MemoryPlusBtn_Click(object sender, EventArgs e)
         {
-
+            memory += double.Parse(txtResult.Text);
         }
 
         private void MemoryMinusBtn_Click(object sender, EventArgs e)
         {
-
+            memory -= double.Parse(txtResult.Text);
         }
 
         private void MemoryRecallBtn_Click(object sender, EventArgs e)
         {
+            txtResult.Text = memory.ToString();
+        }
 
+        private void MemorySaveBtn_Click(object sender, EventArgs e)
+        {
+            memory = double.Parse(txtResult.Text);
+            MemoryRecallBtn.Enabled = true;
+            MemoryClearBtn.Enabled = true;
         }
     }
 }

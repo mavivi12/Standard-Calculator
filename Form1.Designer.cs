@@ -55,6 +55,7 @@ namespace Standard_Calculator
             this.MemoryPlusBtn = new System.Windows.Forms.Button();
             this.MemoryMinusBtn = new System.Windows.Forms.Button();
             this.MemoryRecallBtn = new System.Windows.Forms.Button();
+            this.MemorySaveBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtResult
@@ -353,10 +354,10 @@ namespace Standard_Calculator
             this.MemoryClearBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.MemoryClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MemoryClearBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.MemoryClearBtn.Location = new System.Drawing.Point(4, 100);
+            this.MemoryClearBtn.Location = new System.Drawing.Point(5, 100);
             this.MemoryClearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryClearBtn.Name = "MemoryClearBtn";
-            this.MemoryClearBtn.Size = new System.Drawing.Size(84, 34);
+            this.MemoryClearBtn.Size = new System.Drawing.Size(66, 34);
             this.MemoryClearBtn.TabIndex = 1;
             this.MemoryClearBtn.Text = "mc";
             this.MemoryClearBtn.UseVisualStyleBackColor = false;
@@ -367,10 +368,10 @@ namespace Standard_Calculator
             this.MemoryPlusBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.MemoryPlusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MemoryPlusBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.MemoryPlusBtn.Location = new System.Drawing.Point(88, 100);
+            this.MemoryPlusBtn.Location = new System.Drawing.Point(72, 100);
             this.MemoryPlusBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryPlusBtn.Name = "MemoryPlusBtn";
-            this.MemoryPlusBtn.Size = new System.Drawing.Size(84, 34);
+            this.MemoryPlusBtn.Size = new System.Drawing.Size(66, 34);
             this.MemoryPlusBtn.TabIndex = 2;
             this.MemoryPlusBtn.Text = "m+";
             this.MemoryPlusBtn.UseVisualStyleBackColor = false;
@@ -381,10 +382,10 @@ namespace Standard_Calculator
             this.MemoryMinusBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.MemoryMinusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MemoryMinusBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.MemoryMinusBtn.Location = new System.Drawing.Point(172, 100);
+            this.MemoryMinusBtn.Location = new System.Drawing.Point(139, 100);
             this.MemoryMinusBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryMinusBtn.Name = "MemoryMinusBtn";
-            this.MemoryMinusBtn.Size = new System.Drawing.Size(84, 34);
+            this.MemoryMinusBtn.Size = new System.Drawing.Size(66, 34);
             this.MemoryMinusBtn.TabIndex = 3;
             this.MemoryMinusBtn.Text = "m-";
             this.MemoryMinusBtn.UseVisualStyleBackColor = false;
@@ -395,14 +396,28 @@ namespace Standard_Calculator
             this.MemoryRecallBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.MemoryRecallBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MemoryRecallBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.MemoryRecallBtn.Location = new System.Drawing.Point(256, 100);
+            this.MemoryRecallBtn.Location = new System.Drawing.Point(206, 100);
             this.MemoryRecallBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryRecallBtn.Name = "MemoryRecallBtn";
-            this.MemoryRecallBtn.Size = new System.Drawing.Size(84, 34);
+            this.MemoryRecallBtn.Size = new System.Drawing.Size(66, 34);
             this.MemoryRecallBtn.TabIndex = 4;
             this.MemoryRecallBtn.Text = "mr";
             this.MemoryRecallBtn.UseVisualStyleBackColor = false;
             this.MemoryRecallBtn.Click += new System.EventHandler(this.MemoryRecallBtn_Click);
+            // 
+            // MemorySaveBtn
+            // 
+            this.MemorySaveBtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.MemorySaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MemorySaveBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+            this.MemorySaveBtn.Location = new System.Drawing.Point(273, 100);
+            this.MemorySaveBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.MemorySaveBtn.Name = "MemorySaveBtn";
+            this.MemorySaveBtn.Size = new System.Drawing.Size(66, 34);
+            this.MemorySaveBtn.TabIndex = 32;
+            this.MemorySaveBtn.Text = "ms";
+            this.MemorySaveBtn.UseVisualStyleBackColor = false;
+            this.MemorySaveBtn.Click += new System.EventHandler(this.MemorySaveBtn_Click);
             // 
             // StdCalculator
             // 
@@ -411,6 +426,7 @@ namespace Standard_Calculator
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(344, 406);
+            this.Controls.Add(this.MemorySaveBtn);
             this.Controls.Add(this.displayOutputLbl);
             this.Controls.Add(this.btn0);
             this.Controls.Add(this.btn1);
@@ -474,6 +490,7 @@ namespace Standard_Calculator
         private System.Windows.Forms.Button MemoryPlusBtn;
         private System.Windows.Forms.Button MemoryMinusBtn;
         private System.Windows.Forms.Button MemoryRecallBtn;
+        private System.Windows.Forms.Button MemorySaveBtn;
     }
 }
 
