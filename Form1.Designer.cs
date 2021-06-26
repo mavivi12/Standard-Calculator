@@ -71,7 +71,6 @@ namespace Standard_Calculator
             this.txtResult.Size = new System.Drawing.Size(336, 51);
             this.txtResult.TabIndex = 28;
             this.txtResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtResult.TextChanged += new System.EventHandler(this.TextResult_TextChanged);
             // 
             // btn0
             // 
@@ -444,7 +443,6 @@ namespace Standard_Calculator
             this.Name = "StdCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.Load += new System.EventHandler(this.Form1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

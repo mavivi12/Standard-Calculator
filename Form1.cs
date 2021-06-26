@@ -18,19 +18,12 @@ namespace Standard_Calculator
             InitializeComponent();
         }
 
-        private void Form1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextResult_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn0_Click(object sender, EventArgs e)
         {
             txtResult.Text += "0";
+
+            if (txtResult.Text == "0")
+                txtResult.Clear();
         }
 
         private void Btn1_Click(object sender, EventArgs e)
@@ -97,34 +90,35 @@ namespace Standard_Calculator
 
         private void AdditionBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "+";
+            displayOutputLbl.Text = txtResult.Text + " +";
+
         }
 
         private void SubtractionBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "−";
+            displayOutputLbl.Text = txtResult.Text + " −";
         }
 
         private void MultiplicationBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "×";
+            displayOutputLbl.Text = txtResult.Text + " ×";
         }
 
         private void DivisionBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "/";
+            displayOutputLbl.Text = txtResult.Text + " ÷";
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text = "";
+            txtResult.Clear();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (txtResult.Text.Length > 0)
             {
-                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1, 1);
+                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1);
             }
         }
 
