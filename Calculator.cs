@@ -12,7 +12,6 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
-
         Double resultVal = 0;
         String operation = "";
         bool isOperationPressed = false;
@@ -71,6 +70,7 @@ namespace Standard_Calculator
         private void EqualBtn_Click(object sender, EventArgs e)
         {
             secondnumber = txtResult.Text;
+
             switch (operation)
             {
                 case "+":
@@ -89,7 +89,16 @@ namespace Standard_Calculator
                     break;
             }
             resultVal = Double.Parse(txtResult.Text);
-            displayOutputLbl.Text = (firstnumber + " " + secondnumber + " =");
+
+            if (txtResult.Text == "")
+            {
+                displayOutputLbl.Text = "";
+                txtResult.Text = "";
+            }
+            else
+            {
+                displayOutputLbl.Text = (firstnumber + " " + secondnumber + " =");
+            }
             operation = "";
         }
 
@@ -136,12 +145,26 @@ namespace Standard_Calculator
 
         private void MemoryPlusBtn_Click(object sender, EventArgs e)
         {
-            memory += Double.Parse(txtResult.Text);
+            try
+            {
+                memory += Double.Parse(txtResult.Text);
+            }
+            catch
+            {
+                txtResult.Text = "";
+            }
         }
 
         private void MemoryMinusBtn_Click(object sender, EventArgs e)
         {
-            memory -= Double.Parse(txtResult.Text);
+            try
+            {
+                memory -= Double.Parse(txtResult.Text);
+            }
+            catch
+            {
+                txtResult.Text = "";
+            }
         }
 
         private void MemoryRecallBtn_Click(object sender, EventArgs e)
@@ -151,9 +174,18 @@ namespace Standard_Calculator
 
         private void MemorySaveBtn_Click(object sender, EventArgs e)
         {
-            memory = Double.Parse(txtResult.Text);
-            MemoryRecallBtn.Enabled = true;
-            MemoryClearBtn.Enabled = true;
+            if (txtResult.Text == "")
+            {
+                memory = 0;
+                MemoryRecallBtn.Enabled = true;
+                MemoryClearBtn.Enabled = true;
+            }
+            else
+            {
+                memory = Double.Parse(txtResult.Text);
+                MemoryRecallBtn.Enabled = true;
+                MemoryClearBtn.Enabled = true;
+            }
         }
     }
 }
