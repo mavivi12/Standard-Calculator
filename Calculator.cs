@@ -13,9 +13,10 @@ namespace Standard_Calculator
     public partial class StdCalculator : System.Windows.Forms.Form
     {
 
-        private double resultVal = 0;
-        private string operation = "";
-        private bool isOperationPressed = false;
+        Double resultVal = 0;
+        String operation = "";
+        bool isOperationPressed = false;
+        String firstnumber, secondnumber;
         private double memory = 0;
 
         public StdCalculator()
@@ -31,7 +32,7 @@ namespace Standard_Calculator
             Button btn = (Button)sender;
 
             if ((txtResult.Text == "0") || isOperationPressed)
-                txtResult.Text = "";
+              txtResult.Text = "";
             isOperationPressed = false;
 
             if (btn.Text == ".")
@@ -63,11 +64,13 @@ namespace Standard_Calculator
                     isOperationPressed = true;
                     displayOutputLbl.Text = resultVal + " " + operation;
                 }
+
+            firstnumber = displayOutputLbl.Text;
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            displayOutputLbl.Text = "";
+            secondnumber = txtResult.Text;
             switch (operation)
             {
                 case "+":
@@ -86,14 +89,25 @@ namespace Standard_Calculator
                     break;
             }
             resultVal = Double.Parse(txtResult.Text);
+            displayOutputLbl.Text = (firstnumber + " " + secondnumber + " =");
             operation = "";
         }
 
         private void PlusMinusBtn_Click(object sender, EventArgs e)
         {
-            double v = Double.Parse(txtResult.Text);
-            v = -v;
-            txtResult.Text = v.ToString();
+            if (txtResult.Text == "")
+            {
+                if (txtResult.Text == "-")
+                {
+                    txtResult.Text = "";
+                }
+            }
+            else
+            {
+                double v = Double.Parse(txtResult.Text);
+                v = -v;
+                txtResult.Text = v.ToString();
+            }
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
