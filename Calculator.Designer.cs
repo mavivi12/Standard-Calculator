@@ -67,7 +67,6 @@ namespace Standard_Calculator
             this.txtResult.Margin = new System.Windows.Forms.Padding(4);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
-            this.txtResult.PlaceholderText = "0";
             this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(336, 51);
             this.txtResult.TabIndex = 28;

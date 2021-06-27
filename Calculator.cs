@@ -12,28 +12,33 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
-        Double resultVal = 0;
-        String operation = "";
+        Double resultVal = 0; //first stored number
+        String operation = ""; 
         bool isOperationPressed = false;
         String firstnumber, secondnumber;
-        private double memory = 0;
+        Double memory = 0;
 
         public StdCalculator()
         {
             InitializeComponent();
             
+            //empty memory, not able to click
             MemoryRecallBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
+            txtResult.Text = "0";
         }
 
+        //Number buttons including decimal
         private void NumberBtn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
 
             if ((txtResult.Text == "0") || isOperationPressed)
-              txtResult.Text = "";
+                txtResult.Text = "";
+
             isOperationPressed = false;
 
+            //To use the decimal once
             if (btn.Text == ".")
             {
                 if (!txtResult.Text.Contains("."))
@@ -45,44 +50,45 @@ namespace Standard_Calculator
             }
         }
 
+        //Operators
         private void Operator_Click(object sender, EventArgs e)
         {
             Button oper = (Button)sender;
 
-                if (resultVal != 0)
-                {
-                    EqualBtn.PerformClick();
-                    isOperationPressed = true;
-                    operation = oper.Text;
-                    displayOutputLbl.Text = resultVal + " " + operation;
-                }
-                else
-                {
-                    operation = oper.Text;
-                    resultVal = Double.Parse(txtResult.Text);
-                    isOperationPressed = true;
-                    displayOutputLbl.Text = resultVal + " " + operation;
-                }
+            if (resultVal != 0)
+            {
+                EqualBtn.PerformClick();
+                isOperationPressed = true;
+                operation = oper.Text;
+                displayOutputLbl.Text = resultVal + " " + operation;
+            }
+            else
+            {
+                operation = oper.Text;
+                resultVal = Double.Parse(txtResult.Text);
+                isOperationPressed = true;
+                displayOutputLbl.Text = resultVal + " " + operation;
+            }
 
-            firstnumber = displayOutputLbl.Text;
+            firstnumber = displayOutputLbl.Text; //store the value in variable firstnumber
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            secondnumber = txtResult.Text;
+            secondnumber = txtResult.Text; //store the value in variable secondnumber
 
             switch (operation)
             {
-                case "+":
+                case "+": //addition
                     txtResult.Text = (resultVal + Double.Parse(txtResult.Text)).ToString();
                     break;
-                case "−":
+                case "−": //subtraction
                     txtResult.Text = (resultVal - Double.Parse(txtResult.Text)).ToString();
                     break;
-                case "×":
+                case "×": //multiplication
                     txtResult.Text = (resultVal * Double.Parse(txtResult.Text)).ToString();
                     break;
-                case "÷":
+                case "÷": //division
                     txtResult.Text = (resultVal / Double.Parse(txtResult.Text)).ToString();
                     break;
                 default:
@@ -121,7 +127,7 @@ namespace Standard_Calculator
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Clear();
+            txtResult.Text = "0";
             displayOutputLbl.Text = "";
             resultVal = 0;
             operation = "";
@@ -132,8 +138,12 @@ namespace Standard_Calculator
         {
             if (txtResult.Text.Length > 0)
             {
-                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1);
+                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1, 1);
+
+                if (txtResult.Text == "")
+                    txtResult.Text = "0";
             }
+
         }
 
         private void MemoryClearBtn_Click(object sender, EventArgs e)
@@ -157,14 +167,10 @@ namespace Standard_Calculator
 
         private void MemoryMinusBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                memory -= Double.Parse(txtResult.Text);
-            }
-            catch
-            {
-                txtResult.Text = "";
-            }
+            memory -= Double.Parse(txtResult.Text);
+            txtResult.Text = memory.ToString();
+            MemoryRecallBtn.Enabled = true;
+            MemoryClearBtn.Enabled = true;
         }
 
         private void MemoryRecallBtn_Click(object sender, EventArgs e)
@@ -174,18 +180,9 @@ namespace Standard_Calculator
 
         private void MemorySaveBtn_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "")
-            {
-                memory = 0;
-                MemoryRecallBtn.Enabled = true;
-                MemoryClearBtn.Enabled = true;
-            }
-            else
-            {
-                memory = Double.Parse(txtResult.Text);
-                MemoryRecallBtn.Enabled = true;
-                MemoryClearBtn.Enabled = true;
-            }
+            memory = Double.Parse(txtResult.Text);
+            MemoryRecallBtn.Enabled = true;
+            MemoryClearBtn.Enabled = true;
         }
     }
 }
