@@ -82,10 +82,10 @@ namespace Standard_Calculator
             this.btn0.Margin = new System.Windows.Forms.Padding(4);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(168, 52);
-            this.btn0.TabIndex = 21;
+            this.btn0.TabIndex = 22;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
-            this.btn0.Click += new System.EventHandler(this.Btn0_Click);
+            this.btn0.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn1
             // 
@@ -96,10 +96,10 @@ namespace Standard_Calculator
             this.btn1.Margin = new System.Windows.Forms.Padding(4);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(84, 52);
-            this.btn1.TabIndex = 17;
+            this.btn1.TabIndex = 18;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
-            this.btn1.Click += new System.EventHandler(this.Btn1_Click);
+            this.btn1.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn2
             // 
@@ -110,10 +110,10 @@ namespace Standard_Calculator
             this.btn2.Margin = new System.Windows.Forms.Padding(4);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(84, 52);
-            this.btn2.TabIndex = 18;
+            this.btn2.TabIndex = 19;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
-            this.btn2.Click += new System.EventHandler(this.Btn2_Click);
+            this.btn2.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn3
             // 
@@ -124,10 +124,10 @@ namespace Standard_Calculator
             this.btn3.Margin = new System.Windows.Forms.Padding(4);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(84, 52);
-            this.btn3.TabIndex = 19;
+            this.btn3.TabIndex = 20;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
-            this.btn3.Click += new System.EventHandler(this.Btn3_Click);
+            this.btn3.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn4
             // 
@@ -138,10 +138,10 @@ namespace Standard_Calculator
             this.btn4.Margin = new System.Windows.Forms.Padding(4);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(84, 52);
-            this.btn4.TabIndex = 13;
+            this.btn4.TabIndex = 14;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
-            this.btn4.Click += new System.EventHandler(this.Btn4_Click);
+            this.btn4.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn5
             // 
@@ -152,10 +152,10 @@ namespace Standard_Calculator
             this.btn5.Margin = new System.Windows.Forms.Padding(4);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(84, 52);
-            this.btn5.TabIndex = 14;
+            this.btn5.TabIndex = 15;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
-            this.btn5.Click += new System.EventHandler(this.Btn5_Click);
+            this.btn5.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn6
             // 
@@ -166,10 +166,10 @@ namespace Standard_Calculator
             this.btn6.Margin = new System.Windows.Forms.Padding(4);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(84, 52);
-            this.btn6.TabIndex = 15;
+            this.btn6.TabIndex = 16;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
-            this.btn6.Click += new System.EventHandler(this.Btn6_Click);
+            this.btn6.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn7
             // 
@@ -180,10 +180,10 @@ namespace Standard_Calculator
             this.btn7.Margin = new System.Windows.Forms.Padding(4);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(84, 52);
-            this.btn7.TabIndex = 9;
+            this.btn7.TabIndex = 10;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
-            this.btn7.Click += new System.EventHandler(this.Btn7_Click);
+            this.btn7.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn8
             // 
@@ -194,10 +194,10 @@ namespace Standard_Calculator
             this.btn8.Margin = new System.Windows.Forms.Padding(4);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(84, 52);
-            this.btn8.TabIndex = 10;
+            this.btn8.TabIndex = 11;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
-            this.btn8.Click += new System.EventHandler(this.Btn8_Click);
+            this.btn8.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // btn9
             // 
@@ -208,10 +208,10 @@ namespace Standard_Calculator
             this.btn9.Margin = new System.Windows.Forms.Padding(4);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(84, 52);
-            this.btn9.TabIndex = 11;
+            this.btn9.TabIndex = 12;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
-            this.btn9.Click += new System.EventHandler(this.Btn9_Click);
+            this.btn9.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // PointBtn
             // 
@@ -222,10 +222,10 @@ namespace Standard_Calculator
             this.PointBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PointBtn.Name = "PointBtn";
             this.PointBtn.Size = new System.Drawing.Size(84, 52);
-            this.PointBtn.TabIndex = 22;
+            this.PointBtn.TabIndex = 23;
             this.PointBtn.Text = ".";
             this.PointBtn.UseVisualStyleBackColor = false;
-            this.PointBtn.Click += new System.EventHandler(this.PointBtn_Click);
+            this.PointBtn.Click += new System.EventHandler(this.NumberBtn_Click);
             // 
             // EqualBtn
             // 
@@ -236,9 +236,10 @@ namespace Standard_Calculator
             this.EqualBtn.Margin = new System.Windows.Forms.Padding(4);
             this.EqualBtn.Name = "EqualBtn";
             this.EqualBtn.Size = new System.Drawing.Size(84, 52);
-            this.EqualBtn.TabIndex = 23;
+            this.EqualBtn.TabIndex = 24;
             this.EqualBtn.Text = "=";
             this.EqualBtn.UseVisualStyleBackColor = false;
+            this.EqualBtn.Click += new System.EventHandler(this.EqualBtn_Click);
             // 
             // PlusMinusBtn
             // 
@@ -249,7 +250,7 @@ namespace Standard_Calculator
             this.PlusMinusBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PlusMinusBtn.Name = "PlusMinusBtn";
             this.PlusMinusBtn.Size = new System.Drawing.Size(84, 52);
-            this.PlusMinusBtn.TabIndex = 7;
+            this.PlusMinusBtn.TabIndex = 8;
             this.PlusMinusBtn.Text = "+/-";
             this.PlusMinusBtn.UseVisualStyleBackColor = false;
             this.PlusMinusBtn.Click += new System.EventHandler(this.PlusMinusBtn_Click);
@@ -263,10 +264,10 @@ namespace Standard_Calculator
             this.AdditionBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AdditionBtn.Name = "AdditionBtn";
             this.AdditionBtn.Size = new System.Drawing.Size(84, 52);
-            this.AdditionBtn.TabIndex = 20;
+            this.AdditionBtn.TabIndex = 21;
             this.AdditionBtn.Text = "+";
             this.AdditionBtn.UseVisualStyleBackColor = false;
-            this.AdditionBtn.Click += new System.EventHandler(this.AdditionBtn_Click);
+            this.AdditionBtn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // SubtractionBtn
             // 
@@ -277,10 +278,10 @@ namespace Standard_Calculator
             this.SubtractionBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SubtractionBtn.Name = "SubtractionBtn";
             this.SubtractionBtn.Size = new System.Drawing.Size(84, 52);
-            this.SubtractionBtn.TabIndex = 16;
+            this.SubtractionBtn.TabIndex = 17;
             this.SubtractionBtn.Text = "−";
             this.SubtractionBtn.UseVisualStyleBackColor = false;
-            this.SubtractionBtn.Click += new System.EventHandler(this.SubtractionBtn_Click);
+            this.SubtractionBtn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // MultiplicationBtn
             // 
@@ -291,10 +292,10 @@ namespace Standard_Calculator
             this.MultiplicationBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MultiplicationBtn.Name = "MultiplicationBtn";
             this.MultiplicationBtn.Size = new System.Drawing.Size(84, 52);
-            this.MultiplicationBtn.TabIndex = 12;
+            this.MultiplicationBtn.TabIndex = 13;
             this.MultiplicationBtn.Text = "×";
             this.MultiplicationBtn.UseVisualStyleBackColor = false;
-            this.MultiplicationBtn.Click += new System.EventHandler(this.MultiplicationBtn_Click);
+            this.MultiplicationBtn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // DivisionBtn
             // 
@@ -305,10 +306,10 @@ namespace Standard_Calculator
             this.DivisionBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DivisionBtn.Name = "DivisionBtn";
             this.DivisionBtn.Size = new System.Drawing.Size(84, 52);
-            this.DivisionBtn.TabIndex = 8;
+            this.DivisionBtn.TabIndex = 9;
             this.DivisionBtn.Text = "÷";
             this.DivisionBtn.UseVisualStyleBackColor = false;
-            this.DivisionBtn.Click += new System.EventHandler(this.DivisionBtn_Click);
+            this.DivisionBtn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // ClearBtn
             // 
@@ -319,7 +320,7 @@ namespace Standard_Calculator
             this.ClearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(84, 52);
-            this.ClearBtn.TabIndex = 5;
+            this.ClearBtn.TabIndex = 6;
             this.ClearBtn.Text = "AC";
             this.ClearBtn.UseVisualStyleBackColor = false;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
@@ -333,7 +334,7 @@ namespace Standard_Calculator
             this.DeleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(84, 52);
-            this.DeleteBtn.TabIndex = 6;
+            this.DeleteBtn.TabIndex = 7;
             this.DeleteBtn.Text = "←";
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
@@ -342,7 +343,7 @@ namespace Standard_Calculator
             // 
             this.displayOutputLbl.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.displayOutputLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.displayOutputLbl.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.displayOutputLbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.displayOutputLbl.Location = new System.Drawing.Point(5, 7);
             this.displayOutputLbl.Name = "displayOutputLbl";
             this.displayOutputLbl.Size = new System.Drawing.Size(336, 38);
@@ -368,11 +369,11 @@ namespace Standard_Calculator
             this.MemoryPlusBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.MemoryPlusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MemoryPlusBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.MemoryPlusBtn.Location = new System.Drawing.Point(72, 100);
+            this.MemoryPlusBtn.Location = new System.Drawing.Point(206, 100);
             this.MemoryPlusBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryPlusBtn.Name = "MemoryPlusBtn";
             this.MemoryPlusBtn.Size = new System.Drawing.Size(66, 34);
-            this.MemoryPlusBtn.TabIndex = 2;
+            this.MemoryPlusBtn.TabIndex = 4;
             this.MemoryPlusBtn.Text = "m+";
             this.MemoryPlusBtn.UseVisualStyleBackColor = false;
             this.MemoryPlusBtn.Click += new System.EventHandler(this.MemoryPlusBtn_Click);
@@ -396,11 +397,11 @@ namespace Standard_Calculator
             this.MemoryRecallBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.MemoryRecallBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MemoryRecallBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.MemoryRecallBtn.Location = new System.Drawing.Point(206, 100);
+            this.MemoryRecallBtn.Location = new System.Drawing.Point(72, 100);
             this.MemoryRecallBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryRecallBtn.Name = "MemoryRecallBtn";
             this.MemoryRecallBtn.Size = new System.Drawing.Size(66, 34);
-            this.MemoryRecallBtn.TabIndex = 4;
+            this.MemoryRecallBtn.TabIndex = 2;
             this.MemoryRecallBtn.Text = "mr";
             this.MemoryRecallBtn.UseVisualStyleBackColor = false;
             this.MemoryRecallBtn.Click += new System.EventHandler(this.MemoryRecallBtn_Click);
@@ -414,7 +415,7 @@ namespace Standard_Calculator
             this.MemorySaveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MemorySaveBtn.Name = "MemorySaveBtn";
             this.MemorySaveBtn.Size = new System.Drawing.Size(66, 34);
-            this.MemorySaveBtn.TabIndex = 32;
+            this.MemorySaveBtn.TabIndex = 5;
             this.MemorySaveBtn.Text = "ms";
             this.MemorySaveBtn.UseVisualStyleBackColor = false;
             this.MemorySaveBtn.Click += new System.EventHandler(this.MemorySaveBtn_Click);
@@ -459,6 +460,7 @@ namespace Standard_Calculator
             this.Name = "StdCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.Click += new System.EventHandler(this.NumberBtn_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

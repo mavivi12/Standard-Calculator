@@ -12,112 +12,97 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
+
+        private double resultVal = 0;
+        private string operation = "";
+        private bool isOperationPressed = false;
         private double memory = 0;
 
         public StdCalculator()
         {
             InitializeComponent();
-
+            
             MemoryRecallBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
         }
 
-        private void Btn0_Click(object sender, EventArgs e)
+        private void NumberBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "0";
+            Button btn = (Button)sender;
 
-            if (txtResult.Text == "0")
+            if ((txtResult.Text == "0") || isOperationPressed)
+                txtResult.Text = "";
+            isOperationPressed = false;
+
+            if (btn.Text == ".")
             {
-                txtResult.Clear();
+                if (!txtResult.Text.Contains("."))
+                    txtResult.Text += btn.Text;
+            }
+            else
+            {
+                txtResult.Text += btn.Text;
             }
         }
 
-        private void Btn1_Click(object sender, EventArgs e)
+        private void Operator_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "1";
-        }
+            Button oper = (Button)sender;
 
-        private void Btn2_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "2";
-        }
-
-        private void Btn3_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "3";
-        }
-
-        private void Btn4_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "4";
-        }
-
-        private void Btn5_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "6";
-        }
-
-        private void Btn6_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "6";
-        }
-
-        private void Btn7_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "7";
-        }
-
-        private void Btn8_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "8";
-        }
-
-        private void Btn9_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += "9";
-        }
-
-        private void PointBtn_Click(object sender, EventArgs e)
-        {
-            txtResult.Text += ".";
+                if (resultVal != 0)
+                {
+                    EqualBtn.PerformClick();
+                    isOperationPressed = true;
+                    operation = oper.Text;
+                    displayOutputLbl.Text = resultVal + " " + operation;
+                }
+                else
+                {
+                    operation = oper.Text;
+                    resultVal = Double.Parse(txtResult.Text);
+                    isOperationPressed = true;
+                    displayOutputLbl.Text = resultVal + " " + operation;
+                }
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "=";
+            displayOutputLbl.Text = "";
+            switch (operation)
+            {
+                case "+":
+                    txtResult.Text = (resultVal + Double.Parse(txtResult.Text)).ToString();
+                    break;
+                case "−":
+                    txtResult.Text = (resultVal - Double.Parse(txtResult.Text)).ToString();
+                    break;
+                case "×":
+                    txtResult.Text = (resultVal * Double.Parse(txtResult.Text)).ToString();
+                    break;
+                case "÷":
+                    txtResult.Text = (resultVal / Double.Parse(txtResult.Text)).ToString();
+                    break;
+                default:
+                    break;
+            }
+            resultVal = Double.Parse(txtResult.Text);
+            operation = "";
         }
 
         private void PlusMinusBtn_Click(object sender, EventArgs e)
         {
-            double v = double.Parse(txtResult.Text);
+            double v = Double.Parse(txtResult.Text);
             v = -v;
             txtResult.Text = v.ToString();
-        }
-
-        private void AdditionBtn_Click(object sender, EventArgs e)
-        {
-            displayOutputLbl.Text = txtResult.Text + " +";
-
-        }
-
-        private void SubtractionBtn_Click(object sender, EventArgs e)
-        {
-            displayOutputLbl.Text = txtResult.Text + " −";
-        }
-
-        private void MultiplicationBtn_Click(object sender, EventArgs e)
-        {
-            displayOutputLbl.Text = txtResult.Text + " ×";
-        }
-
-        private void DivisionBtn_Click(object sender, EventArgs e)
-        {
-            displayOutputLbl.Text = txtResult.Text + " ÷";
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             txtResult.Clear();
+            displayOutputLbl.Text = "";
+            resultVal = 0;
+            operation = "";
+            isOperationPressed = false;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -137,12 +122,12 @@ namespace Standard_Calculator
 
         private void MemoryPlusBtn_Click(object sender, EventArgs e)
         {
-            memory += double.Parse(txtResult.Text);
+            memory += Double.Parse(txtResult.Text);
         }
 
         private void MemoryMinusBtn_Click(object sender, EventArgs e)
         {
-            memory -= double.Parse(txtResult.Text);
+            memory -= Double.Parse(txtResult.Text);
         }
 
         private void MemoryRecallBtn_Click(object sender, EventArgs e)
@@ -152,7 +137,7 @@ namespace Standard_Calculator
 
         private void MemorySaveBtn_Click(object sender, EventArgs e)
         {
-            memory = double.Parse(txtResult.Text);
+            memory = Double.Parse(txtResult.Text);
             MemoryRecallBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
         }
