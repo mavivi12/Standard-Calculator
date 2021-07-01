@@ -166,7 +166,7 @@ namespace Standard_Calculator
         private void Decimal()
         {
             if (txtResult.Text.Contains("."))
-                return;
+                txtResult.Text = txtResult.Text;
             else
                 txtResult.Text += ".";
         }
