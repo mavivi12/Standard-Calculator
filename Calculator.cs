@@ -12,165 +12,142 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
-        Double resultVal = 0; //first stored number
-        String operation = ""; 
-        bool isOperationPressed = false;
-        String firstnumber, secondnumber;
-        Double memory = 0;
+        private double memory = 0;
 
         public StdCalculator()
         {
             InitializeComponent();
-            
-            //empty memory, not able to click
-            MemoryRecallBtn.Enabled = false;
+
+            MemoryReadBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
-            txtResult.Text = "0";
         }
 
-        //Number buttons including decimal
-        private void NumberBtn_Click(object sender, EventArgs e)
+        private void StdCalculator_Load(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
 
-            if ((txtResult.Text == "0") || isOperationPressed)
-                txtResult.Text = "";
+        }
 
-            isOperationPressed = false;
+        private void Btn0_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "0";
 
-            //To use the decimal once
-            if (btn.Text == ".")
+            if (txtResult.Text == "0")
             {
-                if (!txtResult.Text.Contains("."))
-                    txtResult.Text += btn.Text;
-            }
-            else
-            {
-                txtResult.Text += btn.Text;
+                txtResult.Clear();
             }
         }
 
-        //Operators
-        private void Operator_Click(object sender, EventArgs e)
+        private void Btn1_Click(object sender, EventArgs e)
         {
-            Button oper = (Button)sender;
+            txtResult.Text += "1";
+        }
 
-            if (resultVal != 0)
-            {
-                EqualBtn.PerformClick();
-                isOperationPressed = true;
-                operation = oper.Text;
-                displayOutputLbl.Text = resultVal + " " + operation;
-            }
-            else
-            {
-                operation = oper.Text;
-                resultVal = Double.Parse(txtResult.Text);
-                isOperationPressed = true;
-                displayOutputLbl.Text = resultVal + " " + operation;
-            }
+        private void Btn2_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "2";
+        }
 
-            firstnumber = displayOutputLbl.Text; //store the value in variable firstnumber
+        private void Btn3_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "3";
+        }
+
+        private void Btn4_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "4";
+        }
+
+        private void Btn5_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "5";
+        }
+
+        private void Btn6_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "6";
+        }
+
+        private void Btn7_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "7";
+        }
+
+        private void Btn8_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "8";
+        }
+
+        private void Btn9_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += "9";
+        }
+
+        private void PointBtn_Click(object sender, EventArgs e)
+        {
+            txtResult.Text += ".";
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            secondnumber = txtResult.Text; //store the value in variable secondnumber
-
-            switch (operation)
-            {
-                case "+": //addition
-                    txtResult.Text = (resultVal + Double.Parse(txtResult.Text)).ToString();
-                    break;
-                case "−": //subtraction
-                    txtResult.Text = (resultVal - Double.Parse(txtResult.Text)).ToString();
-                    break;
-                case "×": //multiplication
-                    txtResult.Text = (resultVal * Double.Parse(txtResult.Text)).ToString();
-                    break;
-                case "÷": //division
-                    txtResult.Text = (resultVal / Double.Parse(txtResult.Text)).ToString();
-                    break;
-                default:
-                    break;
-            }
-            resultVal = Double.Parse(txtResult.Text);
-
-            if (txtResult.Text == "")
-            {
-                displayOutputLbl.Text = "";
-                txtResult.Text = "";
-            }
-            else
-            {
-                displayOutputLbl.Text = (firstnumber + " " + secondnumber + " =");
-            }
-            operation = "";
+            txtResult.Text += "=";
         }
 
-        private void PlusMinusBtn_Click(object sender, EventArgs e)
+        private void NegativeOrPositive_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "")
-            {
-                if (txtResult.Text == "-")
-                {
-                    txtResult.Text = "";
-                }
-            }
-            else
-            {
-                double v = Double.Parse(txtResult.Text);
-                v = -v;
-                txtResult.Text = v.ToString();
-            }
+            double v = double.Parse(txtResult.Text);
+            v = -v;
+            txtResult.Text = v.ToString();
+        }
+
+        private void Addition_Click(object sender, EventArgs e)
+        {
+            displayOutputLbl.Text = txtResult.Text + " +";
+
+        }
+
+        private void Subtraction_Click(object sender, EventArgs e)
+        {
+            displayOutputLbl.Text = txtResult.Text + " −";
+        }
+
+        private void Multiplication_Click(object sender, EventArgs e)
+        {
+            displayOutputLbl.Text = txtResult.Text + " ×";
+        }
+
+        private void Division_Click(object sender, EventArgs e)
+        {
+            displayOutputLbl.Text = txtResult.Text + " ÷";
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text = "0";
-            displayOutputLbl.Text = "";
-            resultVal = 0;
-            operation = "";
-            isOperationPressed = false;
+            txtResult.Clear();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (txtResult.Text.Length > 0)
             {
-                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1, 1);
-
-                if (txtResult.Text == "")
-                    txtResult.Text = "0";
+                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1);
             }
-
         }
 
         private void MemoryClearBtn_Click(object sender, EventArgs e)
         {
             memory = 0;
-            MemoryRecallBtn.Enabled = false;
+            MemoryReadBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
         }
 
         private void MemoryPlusBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                memory += Double.Parse(txtResult.Text);
-            }
-            catch
-            {
-                txtResult.Text = "";
-            }
+            memory += double.Parse(txtResult.Text);
         }
 
         private void MemoryMinusBtn_Click(object sender, EventArgs e)
         {
-            memory -= Double.Parse(txtResult.Text);
-            txtResult.Text = memory.ToString();
-            MemoryRecallBtn.Enabled = true;
-            MemoryClearBtn.Enabled = true;
+            memory -= double.Parse(txtResult.Text);
         }
 
         private void MemoryRecallBtn_Click(object sender, EventArgs e)
@@ -180,8 +157,8 @@ namespace Standard_Calculator
 
         private void MemorySaveBtn_Click(object sender, EventArgs e)
         {
-            memory = Double.Parse(txtResult.Text);
-            MemoryRecallBtn.Enabled = true;
+            memory = double.Parse(txtResult.Text);
+            MemoryReadBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
         }
     }
