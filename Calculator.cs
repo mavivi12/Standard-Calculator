@@ -12,84 +12,131 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
-        private double memory = 0;
+        Double memory = 0;
 
         public StdCalculator()
         {
             InitializeComponent();
 
-            MemoryReadBtn.Enabled = false;
-            MemoryClearBtn.Enabled = false;
         }
 
         private void StdCalculator_Load(object sender, EventArgs e)
         {
-
+            MemoryReadBtn.Enabled = false;
+            MemoryClearBtn.Enabled = false;
         }
 
         private void Btn0_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "0";
-
             if (txtResult.Text == "0")
             {
-                txtResult.Clear();
+                txtResult.Text = "0";
             }
+            else
+                txtResult.Text += "0";
         }
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "1";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "1";
+            }
+            else
+                txtResult.Text += "1";
         }
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "2";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "2";
+            }
+            else
+                txtResult.Text += "2";
         }
 
         private void Btn3_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "3";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "3";
+            }
+            else
+                txtResult.Text += "3";
         }
 
         private void Btn4_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "4";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "4";
+            }
+            else
+                txtResult.Text += "4";
         }
 
         private void Btn5_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "5";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "5";
+            }
+            else
+                txtResult.Text += "5";
         }
 
         private void Btn6_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "6";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "6";
+            }
+            else
+                txtResult.Text += "6";
         }
 
         private void Btn7_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "7";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "7";
+            }
+            else
+                txtResult.Text += "7";
         }
 
         private void Btn8_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "8";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "8";
+            }
+            else
+                txtResult.Text += "8";
         }
 
         private void Btn9_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "9";
+            if (txtResult.Text == "0")
+            {
+                txtResult.Text = "9";
+            }
+            else
+                txtResult.Text += "9";
         }
 
         private void PointBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += ".";
+            if (txtResult.Text.Contains("."))
+                txtResult.Text = txtResult.Text;
+            else
+                txtResult.Text += ".";
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Text += "=";
+
         }
 
         private void NegativeOrPositive_Click(object sender, EventArgs e)
@@ -102,7 +149,6 @@ namespace Standard_Calculator
         private void Addition_Click(object sender, EventArgs e)
         {
             displayOutputLbl.Text = txtResult.Text + " +";
-
         }
 
         private void Subtraction_Click(object sender, EventArgs e)
