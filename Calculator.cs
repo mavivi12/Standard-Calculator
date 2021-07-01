@@ -150,7 +150,7 @@ namespace Standard_Calculator
                 txtResult.Text += "9";
         }
 
-        private void PointBtn_Click(object sender, EventArgs e)
+        private void DecimalBtn_Click(object sender, EventArgs e)
         {
             if (txtResult.Text.Contains("."))
                 txtResult.Text = txtResult.Text;
@@ -203,16 +203,16 @@ namespace Standard_Calculator
 
             switch (operation)
             {
-                case "+": //addition
+                case "+":
                     txtResult.Text = (firstValue + secondValue).ToString();
                     break;
-                case "−": //subtraction
+                case "−": 
                     txtResult.Text = (firstValue - secondValue).ToString();
                     break;
-                case "×": //multiplication
+                case "×": 
                     txtResult.Text = (firstValue * secondValue).ToString();
                     break;
-                case "÷": //division
+                case "÷": 
                     txtResult.Text = (firstValue / secondValue).ToString();
                     break;
                 default:

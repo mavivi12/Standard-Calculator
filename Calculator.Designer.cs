@@ -224,7 +224,7 @@ namespace Standard_Calculator
             this.PointBtn.TabIndex = 23;
             this.PointBtn.Text = ".";
             this.PointBtn.UseVisualStyleBackColor = false;
-            this.PointBtn.Click += new System.EventHandler(this.PointBtn_Click);
+            this.PointBtn.Click += new System.EventHandler(this.DecimalBtn_Click);
             // 
             // EqualBtn
             // 
