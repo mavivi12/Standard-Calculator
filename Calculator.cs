@@ -215,16 +215,16 @@ namespace Standard_Calculator
             secondValue = Double.Parse(txtResult.Text);
             switch (operation)
             {
-                case "+": //addition
+                case "+": 
                     txtResult.Text = (firstValue + secondValue).ToString();
                     break;
-                case "−": //subtraction
+                case "−": 
                     txtResult.Text = (firstValue - secondValue).ToString();
                     break;
-                case "×": //multiplication
+                case "×": 
                     txtResult.Text = (firstValue * secondValue).ToString();
                     break;
-                case "÷": //division
+                case "÷": 
                     txtResult.Text = (firstValue / secondValue).ToString();
                     break;
                 default:
