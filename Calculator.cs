@@ -13,6 +13,9 @@ namespace Standard_Calculator
     public partial class StdCalculator : System.Windows.Forms.Form
     {
         Double memory = 0;
+        Double firstValue;
+        String operation = "";
+        Boolean isOperationPressed = false;
 
         public StdCalculator()
         {
@@ -29,9 +32,10 @@ namespace Standard_Calculator
 
         private void Btn0_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "0";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "0";
@@ -39,9 +43,10 @@ namespace Standard_Calculator
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "1";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "1";
@@ -49,9 +54,10 @@ namespace Standard_Calculator
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "2";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "2";
@@ -59,9 +65,10 @@ namespace Standard_Calculator
 
         private void Btn3_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "3";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "3";
@@ -69,9 +76,10 @@ namespace Standard_Calculator
 
         private void Btn4_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "4";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "4";
@@ -79,9 +87,10 @@ namespace Standard_Calculator
 
         private void Btn5_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "5";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "5";
@@ -89,9 +98,10 @@ namespace Standard_Calculator
 
         private void Btn6_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "6";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "6";
@@ -99,9 +109,10 @@ namespace Standard_Calculator
 
         private void Btn7_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "7";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "7";
@@ -109,9 +120,10 @@ namespace Standard_Calculator
 
         private void Btn8_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "8";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "8";
@@ -119,9 +131,10 @@ namespace Standard_Calculator
 
         private void Btn9_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
+            if (txtResult.Text == "0" || isOperationPressed == true)
             {
                 txtResult.Text = "9";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "9";
@@ -142,36 +155,51 @@ namespace Standard_Calculator
             txtResult.Text = v.ToString();
         }
 
-        private void EqualBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void Addition_Click(object sender, EventArgs e)
         {
-            displayOutputLbl.Text = txtResult.Text + " +";
+            firstValue = Double.Parse(txtResult.Text);
+            displayOutputLbl.Text = txtResult.Text + " + ";
+            operation = "+";
+            isOperationPressed = true;
         }
 
         private void Subtraction_Click(object sender, EventArgs e)
         {
-            displayOutputLbl.Text = txtResult.Text + " −";
+            firstValue = Double.Parse(txtResult.Text);
+            displayOutputLbl.Text = txtResult.Text + " − ";
+            operation = "−";
+            isOperationPressed = true;
         }
 
         private void Multiplication_Click(object sender, EventArgs e)
         {
-            displayOutputLbl.Text = txtResult.Text + " ×";
+            firstValue = Double.Parse(txtResult.Text);
+            displayOutputLbl.Text = txtResult.Text + " × ";
+            operation = "×";
+            isOperationPressed = true;
         }
 
         private void Division_Click(object sender, EventArgs e)
         {
-            displayOutputLbl.Text = txtResult.Text + " ÷";
+            firstValue = Double.Parse(txtResult.Text);
+            displayOutputLbl.Text = txtResult.Text + " ÷ ";
+            operation = "÷";
+            isOperationPressed = true;
+        }
+
+        private void EqualBtn_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             txtResult.Text = "0";
             displayOutputLbl.Text = "";
+            firstValue = 0;
+            operation = "";
+            isOperationPressed = false;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
