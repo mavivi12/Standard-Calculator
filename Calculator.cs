@@ -22,6 +22,7 @@ namespace Standard_Calculator
 
         private void StdCalculator_Load(object sender, EventArgs e)
         {
+            txtResult.Text = "0";
             MemoryReadBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
         }
@@ -134,17 +135,18 @@ namespace Standard_Calculator
                 txtResult.Text += ".";
         }
 
-        private void EqualBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void NegativeOrPositive_Click(object sender, EventArgs e)
         {
             double v = double.Parse(txtResult.Text);
             v = -v;
             txtResult.Text = v.ToString();
         }
+
+        private void EqualBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void Addition_Click(object sender, EventArgs e)
         {
@@ -168,15 +170,15 @@ namespace Standard_Calculator
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            txtResult.Clear();
+            txtResult.Text = "0";
+            displayOutputLbl.Text = "";
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text.Length > 0)
-            {
-                txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1);
-            }
+            txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1);
+            if (txtResult.Text == "")
+                txtResult.Text = "0";
         }
 
         private void MemoryClearBtn_Click(object sender, EventArgs e)
