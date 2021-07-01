@@ -403,7 +403,7 @@ namespace Standard_Calculator
             this.MemoryReadBtn.TabIndex = 2;
             this.MemoryReadBtn.Text = "mr";
             this.MemoryReadBtn.UseVisualStyleBackColor = false;
-            this.MemoryReadBtn.Click += new System.EventHandler(this.MemoryRecallBtn_Click);
+            this.MemoryReadBtn.Click += new System.EventHandler(this.MemoryReadBtn_Click);
             // 
             // MemorySaveBtn
             // 
