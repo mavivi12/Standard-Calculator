@@ -32,140 +32,153 @@ namespace Standard_Calculator
 
         private void Btn0_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "0";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "0";
+            NumberInput("0");
         }
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "1";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "1";
+            NumberInput("1");
         }
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "2";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "2";
+            NumberInput("2");
         }
 
         private void Btn3_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "3";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "3";
+            NumberInput("3");
         }
 
         private void Btn4_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "4";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "4";
+            NumberInput("4");
         }
 
         private void Btn5_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "5";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "5";
+            NumberInput("5");
         }
 
         private void Btn6_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "6";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "6";
+            NumberInput("6");
         }
 
         private void Btn7_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "7";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "7";
+            NumberInput("7");
         }
 
         private void Btn8_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "8";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "8";
+            NumberInput("8");
         }
 
         private void Btn9_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
-            {
-                txtResult.Text = "9";
-                isOperationPressed = false;
-                isMemory = false;
-            }
-            else
-                txtResult.Text += "9";
+            NumberInput("9");
         }
 
-        private void PointBtn_Click(object sender, EventArgs e)
+        private void DecimalBtn_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text.Contains("."))
-                txtResult.Text = txtResult.Text;
-            else
-                txtResult.Text += ".";
+            Decimal();
         }
 
         private void NegativeOrPositive_Click(object sender, EventArgs e)
         {
-            Double v = Double.Parse(txtResult.Text);
+            Negative();
+        }
+
+        private void Addition_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
+
+        private void Subtraction_Click(object sender, EventArgs e)
+        {
+            Subtract();
+        }
+
+        private void Multiplication_Click(object sender, EventArgs e)
+        {
+            Multiply();
+        }
+
+        private void Division_Click(object sender, EventArgs e)
+        {
+            Divide();
+        }
+
+        private void EqualBtn_Click(object sender, EventArgs e)
+        {
+            Equal();
+            DisplayResult();
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void MemoryClearBtn_Click(object sender, EventArgs e)
+        {
+            MemoryClear();
+        }
+
+        private void MemoryReadBtn_Click(object sender, EventArgs e)
+        {
+            MemoryRead();
+        }
+
+        private void MemoryPlusBtn_Click(object sender, EventArgs e)
+        {
+            MemoryPlus();
+        }
+
+        private void MemoryMinusBtn_Click(object sender, EventArgs e)
+        {
+            MemoryMinus();
+        }
+
+        private void MemorySaveBtn_Click(object sender, EventArgs e)
+        {
+            MemorySave();
+        }
+
+        private void NumberInput(string number)
+        {
+            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
+            {
+                txtResult.Text = number;
+                isOperationPressed = false;
+                isMemory = false;
+            }
+            else
+                txtResult.Text += number;
+        }
+
+        private void Decimal()
+        {
+            if (txtResult.Text.Contains("."))
+                return;
+            else
+                txtResult.Text += ".";
+        }
+
+        private void Negative()
+        {
+            double v = Double.Parse(txtResult.Text);
             v = -v;
             txtResult.Text = v.ToString();
         }
 
-        private void Addition_Click(object sender, EventArgs e)
+        private void Add()
         {
             firstValue = Double.Parse(txtResult.Text);
             displayOutputLbl.Text = txtResult.Text + " + ";
@@ -173,7 +186,7 @@ namespace Standard_Calculator
             isOperationPressed = true;
         }
 
-        private void Subtraction_Click(object sender, EventArgs e)
+        private void Subtract()
         {
             firstValue = Double.Parse(txtResult.Text);
             displayOutputLbl.Text = txtResult.Text + " − ";
@@ -181,7 +194,7 @@ namespace Standard_Calculator
             isOperationPressed = true;
         }
 
-        private void Multiplication_Click(object sender, EventArgs e)
+        private void Multiply()
         {
             firstValue = Double.Parse(txtResult.Text);
             displayOutputLbl.Text = txtResult.Text + " × ";
@@ -189,7 +202,7 @@ namespace Standard_Calculator
             isOperationPressed = true;
         }
 
-        private void Division_Click(object sender, EventArgs e)
+        private void Divide()
         {
             firstValue = Double.Parse(txtResult.Text);
             displayOutputLbl.Text = txtResult.Text + " ÷ ";
@@ -197,10 +210,9 @@ namespace Standard_Calculator
             isOperationPressed = true;
         }
 
-        private void EqualBtn_Click(object sender, EventArgs e)
+        private void Equal()
         {
             secondValue = Double.Parse(txtResult.Text);
-
             switch (operation)
             {
                 case "+": //addition
@@ -218,7 +230,10 @@ namespace Standard_Calculator
                 default:
                     break;
             }
+        }
 
+        private void DisplayResult()
+        {
             if (firstValue == 0)
             {
                 displayOutputLbl.Text = Convert.ToString(secondValue + " = ");
@@ -229,7 +244,7 @@ namespace Standard_Calculator
             }
         }
 
-        private void ClearBtn_Click(object sender, EventArgs e)
+        private void Clear()
         {
             txtResult.Text = "0";
             displayOutputLbl.Text = "";
@@ -238,41 +253,41 @@ namespace Standard_Calculator
             isOperationPressed = false;
         }
 
-        private void DeleteBtn_Click(object sender, EventArgs e)
+        private void Delete()
         {
             txtResult.Text = txtResult.Text.Remove(txtResult.Text.Length - 1);
             if (txtResult.Text == "")
                 txtResult.Text = "0";
         }
 
-        private void MemoryClearBtn_Click(object sender, EventArgs e)
+        private void MemoryClear()
         {
             memory = 0;
             MemoryReadBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
         }
 
-        private void MemoryReadBtn_Click(object sender, EventArgs e)
+        private void MemoryRead()
         {
             txtResult.Text = memory.ToString();
             isMemory = true;
         }
 
-        private void MemoryPlusBtn_Click(object sender, EventArgs e)
+        private void MemoryPlus()
         {
             memory += Double.Parse(txtResult.Text);
             MemoryReadBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
         }
 
-        private void MemoryMinusBtn_Click(object sender, EventArgs e)
+        private void MemoryMinus()
         {
             memory -= Double.Parse(txtResult.Text);
             MemoryReadBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
         }
 
-        private void MemorySaveBtn_Click(object sender, EventArgs e)
+        private void MemorySave()
         {
             memory = Double.Parse(txtResult.Text);
             MemoryReadBtn.Enabled = true;

@@ -41,7 +41,7 @@ namespace Standard_Calculator
             this.btn7 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
-            this.PointBtn = new System.Windows.Forms.Button();
+            this.DecimalBtn = new System.Windows.Forms.Button();
             this.EqualBtn = new System.Windows.Forms.Button();
             this.NegativeOrPositiveBtn = new System.Windows.Forms.Button();
             this.AdditionBtn = new System.Windows.Forms.Button();
@@ -212,19 +212,19 @@ namespace Standard_Calculator
             this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.Btn9_Click);
             // 
-            // PointBtn
+            // DecimalBtn
             // 
-            this.PointBtn.BackColor = System.Drawing.Color.Gainsboro;
-            this.PointBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PointBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PointBtn.Location = new System.Drawing.Point(172, 348);
-            this.PointBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.PointBtn.Name = "PointBtn";
-            this.PointBtn.Size = new System.Drawing.Size(84, 52);
-            this.PointBtn.TabIndex = 23;
-            this.PointBtn.Text = ".";
-            this.PointBtn.UseVisualStyleBackColor = false;
-            this.PointBtn.Click += new System.EventHandler(this.PointBtn_Click);
+            this.DecimalBtn.BackColor = System.Drawing.Color.Gainsboro;
+            this.DecimalBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DecimalBtn.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DecimalBtn.Location = new System.Drawing.Point(172, 348);
+            this.DecimalBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.DecimalBtn.Name = "DecimalBtn";
+            this.DecimalBtn.Size = new System.Drawing.Size(84, 52);
+            this.DecimalBtn.TabIndex = 23;
+            this.DecimalBtn.Text = ".";
+            this.DecimalBtn.UseVisualStyleBackColor = false;
+            this.DecimalBtn.Click += new System.EventHandler(this.DecimalBtn_Click);
             // 
             // EqualBtn
             // 
@@ -450,7 +450,7 @@ namespace Standard_Calculator
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.EqualBtn);
-            this.Controls.Add(this.PointBtn);
+            this.Controls.Add(this.DecimalBtn);
             this.Controls.Add(this.btn2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -477,7 +477,7 @@ namespace Standard_Calculator
         private System.Windows.Forms.Button btn7;
         private System.Windows.Forms.Button btn8;
         private System.Windows.Forms.Button btn9;
-        private System.Windows.Forms.Button PointBtn;
+        private System.Windows.Forms.Button DecimalBtn;
         private System.Windows.Forms.Button EqualBtn;
         private System.Windows.Forms.Button NegativeOrPositiveBtn;
         private System.Windows.Forms.Button AdditionBtn;
