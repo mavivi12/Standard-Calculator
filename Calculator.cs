@@ -113,7 +113,7 @@ namespace Standard_Calculator
             if (solve.Operation == "+" || solve.Operation == "−")
                 Equal();
             
-            if (solve2.Operation == "×" || solve2.Operation == "÷")
+            if (solve2.Operation == "×" || solve.Operation == "÷")
                 Equal2();
         }
 
@@ -209,8 +209,8 @@ namespace Standard_Calculator
             solve.Operation = "+";
             solve.IsOperationPressed = true;
             solve.Num2 = txtResult.Text;
-            solve.Add();
-        }
+            solve.Add();            
+        }   
 
         private void SubtractDetails()
         {
