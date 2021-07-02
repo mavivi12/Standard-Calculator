@@ -31,17 +31,5 @@ namespace Standard_Calculator
             secondValue = float.Parse(num2).ToString();
             num2 = (float.Parse(firstValue) - float.Parse(secondValue)).ToString();
         }
-
-        public void Multiply()
-        {
-            secondValue = float.Parse(num2).ToString();
-            num2 = (float.Parse(firstValue) * float.Parse(secondValue)).ToString();
-        }
-
-        public void Divide()
-        {
-            secondValue = float.Parse(num2).ToString();
-            num2 = (float.Parse(firstValue) / float.Parse(secondValue)).ToString();
-        }
     }
 }

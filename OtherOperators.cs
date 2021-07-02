@@ -8,13 +8,13 @@ namespace Standard_Calculator
 {
     class OtherOperators : OperatorClass
     {
-        public new void Multiply()
+        public void Multiply()
         {
             SecondValue = float.Parse(Num2).ToString();
             Num2 = (float.Parse(FirstValue) * float.Parse(SecondValue)).ToString();
         }
 
-        public new void Divide()
+        public void Divide()
         {
             SecondValue = float.Parse(Num2).ToString();
             Num2 = (float.Parse(FirstValue) / float.Parse(SecondValue)).ToString();

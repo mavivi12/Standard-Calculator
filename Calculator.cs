@@ -110,7 +110,11 @@ namespace Standard_Calculator
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            Equal();
+            if (solve.Operation == "+" || solve.Operation == "−")
+                Equal();
+            
+            if (solve2.Operation == "×" || solve2.Operation == "÷")
+                Equal2();
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
@@ -154,6 +158,7 @@ namespace Standard_Calculator
             {
                 txtResult.Text = number;
                 solve.IsOperationPressed = false;
+                solve2.IsOperationPressed = false;
                 mem.IsMemory = false;
             }
             else if (displayOutputLbl.Text.Contains("="))
@@ -162,6 +167,7 @@ namespace Standard_Calculator
                 txtResult.Text = number;
                 displayOutputLbl.Text = "";
                 solve.IsOperationPressed = false;
+                solve2.IsOperationPressed = false;
             }
             else
                 txtResult.Text += number;
@@ -174,8 +180,9 @@ namespace Standard_Calculator
                 txtResult.Text = "0";
                 txtResult.Text += ".";
                 solve.IsOperationPressed = false;
+                solve2.IsOperationPressed = false;
             }
-            else if (solve.IsOperationPressed == true || mem.IsMemory == true)
+            else if (solve.IsOperationPressed == true || solve2.IsOperationPressed == true || mem.IsMemory == true)
             {
                 txtResult.Text = "0";
                 txtResult.Text += ".";
@@ -238,7 +245,7 @@ namespace Standard_Calculator
         private void Equal()
         {
             solve.Num2 = txtResult.Text;
-            solve2.Num2 = txtResult.Text;
+
             if (solve.Operation.Equals("+"))
             {
                 solve.Add();
@@ -247,7 +254,15 @@ namespace Standard_Calculator
             {
                 solve.Subtract();
             }
-            else if (solve2.Operation.Equals("×"))
+            txtResult.Text = solve.Num2;
+            DisplayResult();
+        }
+
+        private void Equal2()
+        { 
+            solve2.Num2 = txtResult.Text;
+
+            if (solve2.Operation.Equals("×"))
             {
                 solve2.Multiply();
             }
@@ -256,9 +271,8 @@ namespace Standard_Calculator
                 solve2.Divide();
             }
 
-            txtResult.Text = solve.Num2;
             txtResult.Text = solve2.Num2;
-            DisplayResult();
+            DisplayResult2();
         }
 
         private void DisplayResult()
@@ -271,7 +285,10 @@ namespace Standard_Calculator
             {
                 displayOutputLbl.Text = Convert.ToString(solve.FirstValue + " " + solve.Operation + " " + solve.SecondValue + " = ");
             }
-            
+        }
+         
+        private void DisplayResult2()
+        { 
             if (solve2.FirstValue == "0")
             {
                 displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
@@ -287,8 +304,11 @@ namespace Standard_Calculator
             txtResult.Text = "0";
             displayOutputLbl.Text = "";
             solve.FirstValue = "0";
+            solve2.FirstValue = "0";
             solve.Operation = "";
+            solve2.Operation = "";
             solve.IsOperationPressed = false;
+            solve2.IsOperationPressed = false;
         }
 
         private void Delete()

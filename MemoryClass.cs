@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Standard_Calculator
 {
-    class MemoryClass : OperatorClass
+    class MemoryClass
     {
         Double memory = 0;
         Boolean isMemory = false;
