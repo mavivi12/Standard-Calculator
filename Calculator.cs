@@ -12,10 +12,9 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
+        OperatorClass solve = new OperatorClass();
+
         Double memory = 0;
-        String firstValue = "";
-        String operation = "";
-        Boolean isOperationPressed = false;
         Boolean isMemory = false;
 
         public StdCalculator()
@@ -92,22 +91,22 @@ namespace Standard_Calculator
 
         private void Addition_Click(object sender, EventArgs e)
         {
-            Add();
+            AddDetails();
         }
 
         private void Subtraction_Click(object sender, EventArgs e)
         {
-            Subtract();
+            SubtractDetails();
         }
 
         private void Multiplication_Click(object sender, EventArgs e)
         {
-            Multiply();
+            MultiplyDetails();
         }
 
         private void Division_Click(object sender, EventArgs e)
         {
-            Divide();
+            DivideDetails();
         }
 
         private void EqualBtn_Click(object sender, EventArgs e)
@@ -152,10 +151,10 @@ namespace Standard_Calculator
 
         private void NumberInput(string number)
         {
-            if (txtResult.Text == "0" || isOperationPressed == true || isMemory == true)
+            if (txtResult.Text == "0" || solve.IsOperationPressed == true || isMemory == true)
             {
                 txtResult.Text = number;
-                isOperationPressed = false;
+                solve.IsOperationPressed = false;
                 isMemory = false;
             }
             else
@@ -177,66 +176,80 @@ namespace Standard_Calculator
             txtResult.Text = v.ToString();
         }
 
-        private void Add()
+        private void AddDetails()
         {
-            firstValue = txtResult.Text;
+            solve.FirstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " + ";
-            operation = "+";
-            isOperationPressed = true;
+            solve.Operation = "+";
+            solve.IsOperationPressed = true;
+            solve.Num2 = txtResult.Text;
+            solve.Add();
         }
 
-        private void Subtract()
+        private void SubtractDetails()
         {
-            firstValue = txtResult.Text;
+            solve.FirstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " − ";
-            operation = "−";
-            isOperationPressed = true;
+            solve.Operation = "−";
+            solve.IsOperationPressed = true;
+            solve.Num2 = txtResult.Text;
+            solve.Subtract();
         }
 
-        private void Multiply()
+        private void MultiplyDetails()
         {
-            firstValue = txtResult.Text;
+            solve.FirstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " × ";
-            operation = "×";
-            isOperationPressed = true;
+            solve.Operation = "×";
+            solve.IsOperationPressed = true;
+            solve.Num2 = txtResult.Text;
+            solve.Multiply();
         }
 
-        private void Divide()
+        private void DivideDetails()
         {
-            firstValue = txtResult.Text;
+            solve.FirstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " ÷ ";
-            operation = "÷";
-            isOperationPressed = true;
+            solve.Operation = "÷";
+            solve.IsOperationPressed = true;
+            solve.Num2 = txtResult.Text;
+            solve.Divide();
         }
 
         private void Equal()
         {
-            Double secondValue = Double.Parse(txtResult.Text);
-            switch (operation)
+            solve.Num2 = txtResult.Text;
+            if (solve.Operation.Equals("+"))
             {
-                case "+":
-                    txtResult.Text = (Double.Parse(firstValue) + secondValue).ToString();
-                    break;
-                case "−":
-                    txtResult.Text = (Double.Parse(firstValue) - secondValue).ToString();
-                    break;
-                case "×":
-                    txtResult.Text = (Double.Parse(firstValue) * secondValue).ToString();
-                    break;
-                case "÷":
-                    txtResult.Text = (Double.Parse(firstValue) / secondValue).ToString();
-                    break;
-                default:
-                    break;
+                solve.Add();
+            }
+            else if (solve.Operation.Equals("−"))
+            {
+                solve.Subtract();
+            }
+            else if (solve.Operation.Equals("×"))
+            {
+                solve.Multiply();
+            }
+            else if (solve.Operation.Equals("÷"))
+            {
+                solve.Divide();
             }
 
-            if (firstValue == "0")
+            txtResult.Text = solve.Num2;
+
+            DisplayResult();
+        }
+
+        private void DisplayResult()
+        {
+            if (solve.FirstValue == "0")
             {
                 displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
             }
             else
             {
-                displayOutputLbl.Text = Convert.ToString(firstValue + " " + operation + " " + secondValue + " = ");
+                displayOutputLbl.Text = Convert.ToString(solve.FirstValue + " " + solve.Operation + " " + solve.SecondValue + " = ");
             }
         }
 
@@ -244,9 +257,9 @@ namespace Standard_Calculator
         {
             txtResult.Text = "0";
             displayOutputLbl.Text = "";
-            firstValue = "0";
-            operation = "";
-            isOperationPressed = false;
+            solve.FirstValue = "0";
+            solve.Operation = "";
+            solve.IsOperationPressed = false;
         }
 
         private void Delete()
