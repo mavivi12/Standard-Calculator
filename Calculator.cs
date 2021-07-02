@@ -158,14 +158,34 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = number;
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += number;
         }
 
         private void Decimal()
         {
-            if (txtResult.Text.Contains("."))
+            if (txtResult.TextLength > 0 && txtResult.Text.Contains("."))
+            {
+                txtResult.Text = "0";
+                txtResult.Text += ".";
+                isOperationPressed = false;
+            }
+            else if (isOperationPressed == true || isMemory == true)
+            {
+                txtResult.Text = "0";
+                txtResult.Text += ".";
+            }
+            else if (txtResult.Text.Contains("."))
+            {
                 txtResult.Text = txtResult.Text;
+            }
             else
                 txtResult.Text += ".";
         }
@@ -211,28 +231,28 @@ namespace Standard_Calculator
 
         private void Equal()
         {
-            Double secondValue = Double.Parse(txtResult.Text);
-            switch (operation)
+            String secondValue = Double.Parse(txtResult.Text).ToString();
+
+            if (operation.Equals("+"))
             {
-                case "+":
-                    txtResult.Text = (Double.Parse(firstValue) + secondValue).ToString();
-                    break;
-                case "−":
-                    txtResult.Text = (Double.Parse(firstValue) - secondValue).ToString();
-                    break;
-                case "×":
-                    txtResult.Text = (Double.Parse(firstValue) * secondValue).ToString();
-                    break;
-                case "÷":
-                    txtResult.Text = (Double.Parse(firstValue) / secondValue).ToString();
-                    break;
-                default:
-                    break;
+                txtResult.Text = (Double.Parse(firstValue) + Double.Parse(secondValue)).ToString();
+            }
+            else if (operation.Equals("−"))
+            {
+                txtResult.Text = (Double.Parse(firstValue) - Double.Parse(secondValue)).ToString();
+            }
+            else if (operation.Equals("×"))
+            {
+                txtResult.Text = (Double.Parse(firstValue) * Double.Parse(secondValue)).ToString();
+            }
+            else if (operation.Equals("÷"))
+            {
+                txtResult.Text = (Double.Parse(firstValue) / Double.Parse(secondValue)).ToString();
             }
 
             if (firstValue == "0")
             {
-                displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
+                displayOutputLbl.Text = secondValue + " = ";
             }
             else
             {
