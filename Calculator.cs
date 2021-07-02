@@ -13,7 +13,7 @@ namespace Standard_Calculator
     public partial class StdCalculator : System.Windows.Forms.Form
     {
         Double memory = 0;
-        Double firstValue, secondValue;
+        String firstValue = "";
         String operation = "";
         Boolean isOperationPressed = false;
         Boolean isMemory = false;
@@ -113,7 +113,6 @@ namespace Standard_Calculator
         private void EqualBtn_Click(object sender, EventArgs e)
         {
             Equal();
-            DisplayResult();
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
@@ -180,7 +179,7 @@ namespace Standard_Calculator
 
         private void Add()
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " + ";
             operation = "+";
             isOperationPressed = true;
@@ -188,7 +187,7 @@ namespace Standard_Calculator
 
         private void Subtract()
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " − ";
             operation = "−";
             isOperationPressed = true;
@@ -196,7 +195,7 @@ namespace Standard_Calculator
 
         private void Multiply()
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " × ";
             operation = "×";
             isOperationPressed = true;
@@ -204,7 +203,7 @@ namespace Standard_Calculator
 
         private void Divide()
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " ÷ ";
             operation = "÷";
             isOperationPressed = true;
@@ -212,31 +211,28 @@ namespace Standard_Calculator
 
         private void Equal()
         {
-            secondValue = Double.Parse(txtResult.Text);
+            Double secondValue = Double.Parse(txtResult.Text);
             switch (operation)
             {
-                case "+": 
-                    txtResult.Text = (firstValue + secondValue).ToString();
+                case "+":
+                    txtResult.Text = (Double.Parse(firstValue) + secondValue).ToString();
                     break;
-                case "−": 
-                    txtResult.Text = (firstValue - secondValue).ToString();
+                case "−":
+                    txtResult.Text = (Double.Parse(firstValue) - secondValue).ToString();
                     break;
-                case "×": 
-                    txtResult.Text = (firstValue * secondValue).ToString();
+                case "×":
+                    txtResult.Text = (Double.Parse(firstValue) * secondValue).ToString();
                     break;
-                case "÷": 
-                    txtResult.Text = (firstValue / secondValue).ToString();
+                case "÷":
+                    txtResult.Text = (Double.Parse(firstValue) / secondValue).ToString();
                     break;
                 default:
                     break;
             }
-        }
 
-        private void DisplayResult()
-        {
-            if (firstValue == 0)
+            if (firstValue == "0")
             {
-                displayOutputLbl.Text = Convert.ToString(secondValue + " = ");
+                displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
             }
             else
             {
@@ -248,7 +244,7 @@ namespace Standard_Calculator
         {
             txtResult.Text = "0";
             displayOutputLbl.Text = "";
-            firstValue = 0;
+            firstValue = "0";
             operation = "";
             isOperationPressed = false;
         }
