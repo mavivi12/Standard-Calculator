@@ -255,7 +255,6 @@ namespace Standard_Calculator
             }
 
             txtResult.Text = solve.Num2;
-
             DisplayResult();
         }
 
