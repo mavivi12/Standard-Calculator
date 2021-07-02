@@ -43,6 +43,5 @@ namespace Standard_Calculator
             secondValue = Double.Parse(num2).ToString();
             num2 = (Double.Parse(firstValue) / Double.Parse(secondValue)).ToString();
         }
-
     }
 }

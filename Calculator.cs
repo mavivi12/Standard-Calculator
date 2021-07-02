@@ -13,9 +13,7 @@ namespace Standard_Calculator
     public partial class StdCalculator : System.Windows.Forms.Form
     {
         OperatorClass solve = new OperatorClass();
-
-        Double memory = 0;
-        Boolean isMemory = false;
+        MemoryClass mem = new MemoryClass();
 
         public StdCalculator()
         {
@@ -151,11 +149,11 @@ namespace Standard_Calculator
 
         private void NumberInput(string number)
         {
-            if (txtResult.Text == "0" || solve.IsOperationPressed == true || isMemory == true)
+            if (txtResult.Text == "0" || solve.IsOperationPressed == true || mem.IsMemory == true)
             {
                 txtResult.Text = number;
                 solve.IsOperationPressed = false;
-                isMemory = false;
+                mem.IsMemory = false;
             }
             else
                 txtResult.Text += number;
@@ -229,11 +227,11 @@ namespace Standard_Calculator
             }
             else if (solve.Operation.Equals("×"))
             {
-                solve.Multiply();
+                mem.Multiply();
             }
             else if (solve.Operation.Equals("÷"))
             {
-                solve.Divide();
+                mem.Divide();
             }
 
             txtResult.Text = solve.Num2;
@@ -271,37 +269,37 @@ namespace Standard_Calculator
 
         private void MemoryClear()
         {
-            memory = 0;
+            mem.Memory = 0;
             MemoryReadBtn.Enabled = false;
             MemoryClearBtn.Enabled = false;
         }
 
         private void MemoryRead()
         {
-            txtResult.Text = memory.ToString();
-            isMemory = true;
+            txtResult.Text = mem.Memory.ToString();
+            mem.IsMemory = true;
         }
 
         private void MemoryPlus()
         {
-            memory += Double.Parse(txtResult.Text);
+            mem.Memory += Double.Parse(txtResult.Text);
             MemoryReadBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
         }
 
         private void MemoryMinus()
         {
-            memory -= Double.Parse(txtResult.Text);
+            mem.Memory -= Double.Parse(txtResult.Text);
             MemoryReadBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
         }
 
         private void MemorySave()
         {
-            memory = Double.Parse(txtResult.Text);
+            mem.Memory = Double.Parse(txtResult.Text);
             MemoryReadBtn.Enabled = true;
             MemoryClearBtn.Enabled = true;
-            isMemory = true;
+            mem.IsMemory = true;
         }
     }
 }
