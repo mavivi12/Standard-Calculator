@@ -13,7 +13,7 @@ namespace Standard_Calculator
     public partial class StdCalculator : System.Windows.Forms.Form
     {
         Double memory = 0;
-        Double firstValue, secondValue;
+        String firstValue;
         String operation = "";
         Boolean isOperationPressed = false;
         Boolean isMemory = false;
@@ -38,6 +38,13 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "0";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += "0";
         }
@@ -49,6 +56,13 @@ namespace Standard_Calculator
                 txtResult.Text = "1";
                 isOperationPressed = false;
                 isMemory = false;
+            }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "1";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "1";
@@ -62,6 +76,13 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "2";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += "2";
         }
@@ -73,6 +94,13 @@ namespace Standard_Calculator
                 txtResult.Text = "3";
                 isOperationPressed = false;
                 isMemory = false;
+            }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "3";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "3";
@@ -86,6 +114,13 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "4";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += "4";
         }
@@ -97,6 +132,13 @@ namespace Standard_Calculator
                 txtResult.Text = "5";
                 isOperationPressed = false;
                 isMemory = false;
+            }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "5";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "5";
@@ -110,6 +152,13 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "6";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += "6";
         }
@@ -121,6 +170,13 @@ namespace Standard_Calculator
                 txtResult.Text = "7";
                 isOperationPressed = false;
                 isMemory = false;
+            }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "7";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
             }
             else
                 txtResult.Text += "7";
@@ -134,6 +190,13 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "8";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += "8";
         }
@@ -146,14 +209,34 @@ namespace Standard_Calculator
                 isOperationPressed = false;
                 isMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = "9";
+                displayOutputLbl.Text = "";
+                isOperationPressed = false;
+            }
             else
                 txtResult.Text += "9";
         }
 
         private void DecimalBtn_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text.Contains("."))
+            if (txtResult.TextLength > 0 && txtResult.Text.Contains("."))
+            {
+                txtResult.Text = "0";
+                txtResult.Text += ".";
+                isOperationPressed = false;
+            }
+            else if (isOperationPressed == true || isMemory == true)
+            {
+                txtResult.Text = "0";
+                txtResult.Text += ".";
+            }
+            else if (txtResult.Text.Contains("."))
+            {
                 txtResult.Text = txtResult.Text;
+            }
             else
                 txtResult.Text += ".";
         }
@@ -167,7 +250,7 @@ namespace Standard_Calculator
 
         private void Addition_Click(object sender, EventArgs e)
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " + ";
             operation = "+";
             isOperationPressed = true;
@@ -175,7 +258,7 @@ namespace Standard_Calculator
 
         private void Subtraction_Click(object sender, EventArgs e)
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " − ";
             operation = "−";
             isOperationPressed = true;
@@ -183,7 +266,7 @@ namespace Standard_Calculator
 
         private void Multiplication_Click(object sender, EventArgs e)
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " × ";
             operation = "×";
             isOperationPressed = true;
@@ -191,7 +274,7 @@ namespace Standard_Calculator
 
         private void Division_Click(object sender, EventArgs e)
         {
-            firstValue = Double.Parse(txtResult.Text);
+            firstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " ÷ ";
             operation = "÷";
             isOperationPressed = true;
@@ -199,29 +282,28 @@ namespace Standard_Calculator
 
         private void EqualBtn_Click(object sender, EventArgs e)
         {
-            secondValue = Double.Parse(txtResult.Text);
+            String secondValue = Double.Parse(txtResult.Text).ToString();
 
-            switch (operation)
+            if (operation.Equals("+"))
             {
-                case "+":
-                    txtResult.Text = (firstValue + secondValue).ToString();
-                    break;
-                case "−": 
-                    txtResult.Text = (firstValue - secondValue).ToString();
-                    break;
-                case "×": 
-                    txtResult.Text = (firstValue * secondValue).ToString();
-                    break;
-                case "÷": 
-                    txtResult.Text = (firstValue / secondValue).ToString();
-                    break;
-                default:
-                    break;
+                txtResult.Text = (Double.Parse(firstValue) + Double.Parse(secondValue)).ToString();
+            }
+            else if (operation.Equals("−"))
+            {
+                txtResult.Text = (Double.Parse(firstValue) - Double.Parse(secondValue)).ToString();
+            }
+            else if (operation.Equals("×"))
+            {
+                txtResult.Text = (Double.Parse(firstValue) * Double.Parse(secondValue)).ToString();
+            }
+            else if (operation.Equals("÷"))
+            {
+                txtResult.Text = (Double.Parse(firstValue) / Double.Parse(secondValue)).ToString();
             }
 
-            if (firstValue == 0)
+            if (firstValue == "0")
             {
-                displayOutputLbl.Text = Convert.ToString(secondValue + " = ");
+                displayOutputLbl.Text = secondValue + " = ";
             }
             else
             {
@@ -233,7 +315,7 @@ namespace Standard_Calculator
         {
             txtResult.Text = "0";
             displayOutputLbl.Text = "";
-            firstValue = 0;
+            firstValue = "0";
             operation = "";
             isOperationPressed = false;
         }
