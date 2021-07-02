@@ -155,14 +155,34 @@ namespace Standard_Calculator
                 solve.IsOperationPressed = false;
                 mem.IsMemory = false;
             }
+            else if (displayOutputLbl.Text.Contains("="))
+            {
+                txtResult.Text = "0";
+                txtResult.Text = number;
+                displayOutputLbl.Text = "";
+                solve.IsOperationPressed = false;
+            }
             else
                 txtResult.Text += number;
         }
 
         private void Decimal()
         {
-            if (txtResult.Text.Contains("."))
+            if (txtResult.TextLength > 0 && txtResult.Text.Contains("."))
+            {
+                txtResult.Text = "0";
+                txtResult.Text += ".";
+                solve.IsOperationPressed = false;
+            }
+            else if (solve.IsOperationPressed == true || mem.IsMemory == true)
+            {
+                txtResult.Text = "0";
+                txtResult.Text += ".";
+            }
+            else if (txtResult.Text.Contains("."))
+            {
                 txtResult.Text = txtResult.Text;
+            }
             else
                 txtResult.Text += ".";
         }
@@ -227,11 +247,11 @@ namespace Standard_Calculator
             }
             else if (solve.Operation.Equals("×"))
             {
-                mem.Multiply();
+                solve.Multiply();
             }
             else if (solve.Operation.Equals("÷"))
             {
-                mem.Divide();
+                solve.Divide();
             }
 
             txtResult.Text = solve.Num2;

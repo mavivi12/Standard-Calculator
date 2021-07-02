@@ -22,26 +22,26 @@ namespace Standard_Calculator
 
         public void Add()
         {
-            secondValue = Double.Parse(num2).ToString();
-            num2 = (Double.Parse(firstValue) + Double.Parse(secondValue)).ToString();
+            secondValue = float.Parse(num2).ToString();
+            num2 = (float.Parse(firstValue) + float.Parse(secondValue)).ToString();
         }
 
         public void Subtract()
         {
-            secondValue = Double.Parse(num2).ToString();
-            num2 = (Double.Parse(firstValue) - Double.Parse(secondValue)).ToString();
+            secondValue = float.Parse(num2).ToString();
+            num2 = (float.Parse(firstValue) - float.Parse(secondValue)).ToString();
         }
 
         public void Multiply()
         {
-            secondValue = Double.Parse(num2).ToString();
-            num2 = (Double.Parse(firstValue) * Double.Parse(secondValue)).ToString();
+            secondValue = float.Parse(num2).ToString();
+            num2 = (float.Parse(firstValue) * float.Parse(secondValue)).ToString();
         }
 
         public void Divide()
         {
-            secondValue = Double.Parse(num2).ToString();
-            num2 = (Double.Parse(firstValue) / Double.Parse(secondValue)).ToString();
+            secondValue = float.Parse(num2).ToString();
+            num2 = (float.Parse(firstValue) / float.Parse(secondValue)).ToString();
         }
     }
 }
