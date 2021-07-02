@@ -12,8 +12,9 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
-        OperatorClass solve = new OperatorClass();
-        MemoryClass mem = new MemoryClass();
+        OperatorClass solve = new();
+        OtherOperators solve2 = new();
+        MemoryClass mem = new();
 
         public StdCalculator()
         {
@@ -149,7 +150,7 @@ namespace Standard_Calculator
 
         private void NumberInput(string number)
         {
-            if (txtResult.Text == "0" || solve.IsOperationPressed == true || mem.IsMemory == true)
+            if (txtResult.Text == "0" || solve.IsOperationPressed == true || solve2.IsOperationPressed == true || mem.IsMemory == true)
             {
                 txtResult.Text = number;
                 solve.IsOperationPressed = false;
@@ -216,27 +217,28 @@ namespace Standard_Calculator
 
         private void MultiplyDetails()
         {
-            solve.FirstValue = txtResult.Text;
+            solve2.FirstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " × ";
-            solve.Operation = "×";
-            solve.IsOperationPressed = true;
-            solve.Num2 = txtResult.Text;
-            solve.Multiply();
+            solve2.Operation = "×";
+            solve2.IsOperationPressed = true;
+            solve2.Num2 = txtResult.Text;
+            solve2.Multiply();
         }
 
         private void DivideDetails()
         {
-            solve.FirstValue = txtResult.Text;
+            solve2.FirstValue = txtResult.Text;
             displayOutputLbl.Text = txtResult.Text + " ÷ ";
-            solve.Operation = "÷";
-            solve.IsOperationPressed = true;
-            solve.Num2 = txtResult.Text;
-            solve.Divide();
+            solve2.Operation = "÷";
+            solve2.IsOperationPressed = true;
+            solve2.Num2 = txtResult.Text;
+            solve2.Divide();
         }
 
         private void Equal()
         {
             solve.Num2 = txtResult.Text;
+            solve2.Num2 = txtResult.Text;
             if (solve.Operation.Equals("+"))
             {
                 solve.Add();
@@ -245,16 +247,17 @@ namespace Standard_Calculator
             {
                 solve.Subtract();
             }
-            else if (solve.Operation.Equals("×"))
+            else if (solve2.Operation.Equals("×"))
             {
-                solve.Multiply();
+                solve2.Multiply();
             }
-            else if (solve.Operation.Equals("÷"))
+            else if (solve2.Operation.Equals("÷"))
             {
-                solve.Divide();
+                solve2.Divide();
             }
 
             txtResult.Text = solve.Num2;
+            txtResult.Text = solve2.Num2;
             DisplayResult();
         }
 
@@ -267,6 +270,15 @@ namespace Standard_Calculator
             else
             {
                 displayOutputLbl.Text = Convert.ToString(solve.FirstValue + " " + solve.Operation + " " + solve.SecondValue + " = ");
+            }
+            
+            if (solve2.FirstValue == "0")
+            {
+                displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
+            }
+            else
+            {
+                displayOutputLbl.Text = Convert.ToString(solve2.FirstValue + " " + solve2.Operation + " " + solve2.SecondValue + " = ");
             }
         }
 
