@@ -13,12 +13,14 @@ namespace Standard_Calculator
         String operation = "";
         Boolean isOperationPressed = false;
         String secondValue;
+        String display;
 
         public string FirstValue { get => firstValue; set => firstValue = value; }
         public string Operation { get => operation; set => operation = value; }
         public bool IsOperationPressed { get => isOperationPressed; set => isOperationPressed = value; }
         public string Num2 { get => num2; set => num2 = value; }
         public string SecondValue { get => secondValue; set => secondValue = value; }
+        public string Display { get => display; set => display = value; }
 
         public void Add()
         {

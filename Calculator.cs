@@ -283,7 +283,7 @@ namespace Standard_Calculator
         }
          
         private void DisplayResult2()
-        { 
+        {
             if (solve2.FirstValue == "0")
                 displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
             else
