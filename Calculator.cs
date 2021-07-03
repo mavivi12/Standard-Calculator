@@ -12,9 +12,9 @@ namespace Standard_Calculator
 {
     public partial class StdCalculator : System.Windows.Forms.Form
     {
-        OperatorClass solve = new OperatorClass();
-        OtherOperators solve2 = new OtherOperators();
-        MemoryClass mem = new MemoryClass();
+        OperatorClass solve = new();
+        OtherOperators solve2 = new();
+        MemoryClass mem = new();
 
         public StdCalculator()
         {
@@ -112,8 +112,8 @@ namespace Standard_Calculator
         {
             if (solve.Operation == "+" || solve.Operation == "−")
                 Equal();
-            
-            if (solve2.Operation == "×" || solve.Operation == "÷")
+
+            if (solve2.Operation == "×" || solve2.Operation == "÷")
                 Equal2();
         }
 
@@ -197,7 +197,7 @@ namespace Standard_Calculator
 
         private void Negative()
         {
-            Double v = Double.Parse(txtResult.Text);
+            double v = Double.Parse(txtResult.Text);
             v = -v;
             txtResult.Text = v.ToString();
         }
@@ -209,8 +209,8 @@ namespace Standard_Calculator
             solve.Operation = "+";
             solve.IsOperationPressed = true;
             solve.Num2 = txtResult.Text;
-            solve.Add();            
-        }   
+            solve.Add();
+        }
 
         private void SubtractDetails()
         {
@@ -259,7 +259,7 @@ namespace Standard_Calculator
         }
 
         private void Equal2()
-        { 
+        {
             solve2.Num2 = txtResult.Text;
 
             if (solve2.Operation.Equals("×"))
@@ -270,6 +270,7 @@ namespace Standard_Calculator
             {
                 solve2.Divide();
             }
+
             txtResult.Text = solve2.Num2;
             DisplayResult2();
         }
@@ -277,17 +278,25 @@ namespace Standard_Calculator
         private void DisplayResult()
         {
             if (solve.FirstValue == "0")
+            {
                 displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
+            }
             else
+            {
                 displayOutputLbl.Text = Convert.ToString(solve.FirstValue + " " + solve.Operation + " " + solve.SecondValue + " = ");
+            }
         }
-         
+
         private void DisplayResult2()
         {
             if (solve2.FirstValue == "0")
+            {
                 displayOutputLbl.Text = Convert.ToString(Double.Parse(txtResult.Text) + " = ");
+            }
             else
+            {
                 displayOutputLbl.Text = Convert.ToString(solve2.FirstValue + " " + solve2.Operation + " " + solve2.SecondValue + " = ");
+            }
         }
 
         private void Clear()
